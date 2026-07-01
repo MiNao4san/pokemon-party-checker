@@ -482,11 +482,17 @@ function PartySlotCard(props: {
 
   return (
     <div className="partySlot filledSlot moveEnabledSlot">
-      <button
-        type="button"
+      <div
         className="slotPokemonArea editablePokemonArea"
         onClick={props.onOpenPokemon}
         title="ポケモンを変更"
+        role="button"
+        tabIndex={0}
+        onKeyDown={(event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            props.onOpenPokemon();
+          }
+        }}
       >
         {pokemon.imageUrl ? (
           <img
@@ -513,7 +519,7 @@ function PartySlotCard(props: {
             <span className="abilityText">特性：{pokemon.ability}</span>
           )}
         </span>
-      </button>
+      </div>
 
       <div className="slotCardMain">
         <div className="moveSlotPanel inlineMoveSlotPanel">
