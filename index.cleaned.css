@@ -1534,7 +1534,6 @@ body::after {
     --social-bg: rgba(47, 48, 58, 0.5);
     --shadow: rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
   }
-
   #social .button-icon {
     filter: invert(1) brightness(2);
   }
@@ -1544,28 +1543,22 @@ body::after {
   .typeResistanceGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-
   .offenseCoverageGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-
   .pokemonRiskMain {
     grid-template-columns: auto auto 1fr auto;
   }
-
   .riskLabel {
     justify-self: start;
   }
-
   .riskReason {
     grid-column: 3 / -1;
     white-space: normal;
   }
-
   .compactPartyGrid {
     grid-template-columns: repeat(2, minmax(180px, 1fr));
   }
-
   .compactTypeFilterGrid {
     grid-template-columns: repeat(6, 1fr);
   }
@@ -1575,181 +1568,143 @@ body::after {
   .typeSummaryCard {
     padding: 16px;
   }
-
   .typeResistanceGrid {
     grid-template-columns: 1fr;
   }
-
   .typeResistanceRow {
     grid-template-columns: 1fr;
     border-radius: 18px;
   }
-
   .typeResistanceCounts {
     justify-content: center;
   }
-
   .offenseSummaryCard {
     padding: 16px;
   }
-
   .offenseCoverageGrid {
     grid-template-columns: 1fr;
   }
-
   .offenseCoverageRow {
     grid-template-columns: 1fr;
     border-radius: 18px;
   }
-
   .offenseCoverageCounts {
     justify-content: center;
   }
-
   .summaryModeSwitch {
     grid-template-columns: 1fr;
   }
-
   .summaryModeButton {
     padding: 12px;
   }
-
   .pokemonListCard {
     padding: 16px;
   }
-
   .pokemonRiskMain {
     grid-template-columns: auto 1fr auto;
     gap: 10px;
   }
-
   .rankBadge {
     min-width: 40px;
   }
-
   .riskLabel,
   .riskReason {
     grid-column: 2 / -1;
   }
-
   .slotPokemonArea {
     grid-template-columns: 64px 1fr;
   }
-
   .moveSlotGrid {
     grid-template-columns: 1fr;
   }
-
   .moveCandidateBar {
     grid-template-columns: 1fr auto;
   }
-
   .moveCandidateStatus {
     grid-column: 1 / -1;
   }
-
   .inlineMoveSlotGrid {
     grid-template-columns: 1fr;
   }
-
   .inlineMoveCandidateBar {
     grid-template-columns: 1fr auto;
   }
-
   .inlineMoveCandidateStatus {
     grid-column: 1 / -1;
   }
-
   .candidatePokemonImage,
   .candidateImagePlaceholder {
     width: 70px;
     height: 70px;
   }
-
   .slotPokemonImage,
   .slotPokemonPlaceholder {
     width: 68px;
     height: 68px;
   }
-
   .riskPokemonImage,
   .riskPokemonPlaceholder {
     display: none;
     width: 46px;
     height: 46px;
   }
-
   .compactPartyGrid {
     grid-template-columns: 1fr;
   }
-
   .compactTypeFilterGrid {
     grid-template-columns: repeat(3, 1fr);
   }
-
   .pokemonSelectModal {
     width: calc(100vw - 18px);
     max-height: 88vh;
     border-radius: 20px;
   }
-
   .compactModalSearchArea {
     padding: 20px 16px 14px;
   }
-
   .candidateGrid {
     grid-template-columns: repeat(auto-fill, minmax(120px, 120px));
     gap: 8px;
     padding: 0 14px 20px;
   }
-
   .imageOnlyCandidateCard {
     width: 120px;
     height: 150px;
     grid-template-rows: 92px 1fr;
     padding: 10px 6px;
   }
-
   .imageOnlyCandidateCard .candidatePokemonImage,
   .imageOnlyCandidateCard .candidateImagePlaceholder {
     width: 88px;
     height: 88px;
   }
-
   .imageOnlyCandidateCard strong {
     font-size: 14px;
   }
-
   .layeredPokemonModalBackdrop {
     padding: 72px 10px 24px;
   }
-
   .layeredPokemonSelectModal {
     width: calc(100vw - 20px);
     max-height: calc(100vh - 96px);
     border-radius: 20px;
   }
-
   .pokemonSearchShell {
     grid-template-columns: 1fr;
     gap: 6px;
     padding: 8px 10px;
   }
-
   .searchCancelButton {
     width: 100%;
   }
-
   .compactActionRow {
     justify-content: center;
     top: 0;
     padding: 8px 10px;
   }
-
   .slotPokemonText .pokemonName {
     font-size: 18px;
   }
-
   .deleteSlotButton {
     width: 34px;
     height: 34px;
@@ -1761,7 +1716,6 @@ body::after {
   .moveEnabledSlot {
     grid-template-columns: 1fr;
   }
-
   .moveSlotActions {
     justify-content: flex-start;
   }
@@ -1779,35 +1733,29 @@ body::after {
     grid-template-columns: 1fr;
     row-gap: 18px;
   }
-
   .slotPokemonArea,
   .slotCardMain,
   .moveSlotActions {
     min-height: auto;
   }
-
   .moveSlotActions {
     justify-content: flex-end;
     padding: 0;
   }
-
   .deleteSlotButton {
     width: 52px;
     height: 72px;
     min-height: 72px;
     max-height: 72px;
   }
-
   .emptySlotButton {
     grid-template-columns: 38px 100px 1fr;
     min-height: 108px;
     padding: 0 22px;
   }
-
   .emptySlotPlus {
     font-size: 30px;
   }
-
   .emptySlotIndex,
   .emptySlotText {
     font-size: 18px;
@@ -1818,12 +1766,10 @@ body::after {
   .compactPartyGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-
   .filledSlot.moveEnabledSlot {
     grid-template-columns: minmax(220px, 0.8fr) minmax(360px, 1.5fr) 58px;
     column-gap: 14px;
   }
-
   .deleteSlotButton {
     width: 44px;
     min-width: 44px;
@@ -1834,18 +1780,15 @@ body::after {
   .compactPartyGrid {
     grid-template-columns: 1fr;
   }
-
   .filledSlot.moveEnabledSlot {
     grid-template-columns: 1fr;
     row-gap: 16px;
     padding: 18px;
   }
-
   .moveSlotActions {
     width: 100%;
     justify-content: flex-end;
   }
-
   .deleteSlotButton {
     width: 64px;
     height: 44px;
@@ -1853,12 +1796,10 @@ body::after {
     max-height: 44px;
     border-radius: 16px;
   }
-
   .emptySlotButton {
     min-height: 92px;
     grid-template-columns: auto auto 1fr;
   }
-
   .emptySlotText {
     justify-self: start;
   }
@@ -1869,12 +1810,10 @@ body::after {
     left: 0;
     background-position: left top;
   }
-
   body::after {
     right: 0;
     background-position: right top;
   }
-
   body {
     background-color: #ffffff;
     background-image: url("/images/ui/haikei.png");
@@ -1882,7 +1821,6 @@ body::after {
     background-size: 420px auto;
     background-attachment: fixed;
   }
-
   body::before,
   body::after {
     content: none !important;
@@ -1898,34 +1836,29 @@ body::after {
     opacity: 0.16;
     display: none !important;
   }
-
   #root {
     position: relative;
     z-index: 1;
   }
-
   .app {
     max-width: 1440px;
     margin: 0 auto;
     background: rgba(255, 255, 255, 0.96);
     min-height: 100vh;
     box-shadow: -1px 0 0 rgba(226, 232, 240, 0.9),
-      1px 0 0 rgba(226, 232, 240, 0.9);
+        1px 0 0 rgba(226, 232, 240, 0.9);
   }
 }
 
 @media (max-width: 1099px) {
-
   body::before,
   body::after {
     display: none;
   }
-
   body {
     background-image: none;
     background-color: #ffffff;
   }
-
   .app {
     background: #ffffff;
     box-shadow: none;

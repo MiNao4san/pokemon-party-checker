@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react"; // 未選択
+import { useMemo, useState, type CSSProperties } from "react";
 import { pokemonData } from "./data/pokemonData";
 import { moveData } from "./data/moveData";
 import type { MoveData } from "./data/moveData";
@@ -343,7 +343,6 @@ function App() {
     <main className="app">
       <header className="appHeader">
         <div>
-          {/* <p className="eyebrow">ポケモンパーティチェッカー</p> */}
           <h1>ポケモン パーティ相性分析</h1>
           <p className="lead">
             2〜6体を選ぶと、タイプ相性の観点から防御面・攻撃面を自動分析します。
@@ -721,7 +720,7 @@ function PokemonSelectModal(props: {
                     {
                       "--type-bg": TYPE_STYLES[type].background,
                       "--type-text": TYPE_STYLES[type].text,
-                    } as React.CSSProperties
+                    } as CSSProperties
                   }
                   onClick={() => props.onToggleTypeFilter(type)}
                 >
@@ -815,6 +814,7 @@ function SummaryModeSwitch(props: {
     </div>
   );
 }
+
 function OffenseNeedMoveMessage() {
   return (
     <section className="offenseNeedMoveCard">
@@ -1241,6 +1241,7 @@ function TypeBadge(props: { type: PokemonType }) {
     </span>
   );
 }
+
 function normalizeSearchText(value: string) {
   return value
     .trim()
@@ -1312,6 +1313,7 @@ function getMoveCandidates(
     })
     .slice(0, 12);
 }
+
 function getMoveCandidateScore(move: MoveData, pokemon: PokemonData) {
   let score = 0;
 
