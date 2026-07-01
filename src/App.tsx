@@ -611,17 +611,19 @@ function PartySlotCard(props: {
         </div>
       </div>
 
-      <div className="slotActions moveSlotActions">
-        <button
-          type="button"
-          className="deleteSlotButton"
-          onClick={props.onClear}
-          aria-label={`${pokemon.name}を削除`}
-          title="削除"
-        >
-          ×
-        </button>
-      </div>
+      {!isEditingThisSlot && (
+        <div className="slotActions moveSlotActions">
+          <button
+            type="button"
+            className="deleteSlotButton"
+            onClick={props.onClear}
+            aria-label={`${pokemon.name}を削除`}
+            title="削除"
+          >
+            ×
+          </button>
+        </div>
+      )}
     </div>
   );
 }
@@ -1279,7 +1281,7 @@ function getSearchCandidates(
 }
 
 function getMoveCandidates(query: string): MoveData[] {
-  const normalizedQuery = query.trim().toLowerCase();
+  const normalizedQuery = normalizeSearchText(query);
 
   return moveData
     .filter((move) => {
@@ -1287,7 +1289,7 @@ function getMoveCandidates(query: string): MoveData[] {
         return true;
       }
 
-      return move.name.toLowerCase().includes(normalizedQuery);
+      return normalizeSearchText(move.name).includes(normalizedQuery);
     })
     .slice(0, 12);
 }
