@@ -430,7 +430,7 @@ export const pokemonData: PokemonData[] = [
         types: ["はがね", "むし"],
         formLabel: "メガ",
         searchKeywords: ["メガハッサム", "ハッサム", "ハ", "メガ"],
-        imageUrl: "/images/pokemons",
+        imageUrl: "/pokemon/public/images/pokemons/mega-hassamu.png",
     },
     {
         id: "doraparuto",
@@ -454,7 +454,7 @@ export const pokemonData: PokemonData[] = [
         types: ["ほのお", "むし"],
         formLabel: "通常",
         searchKeywords: ["ウルガモス", "ウル"],
-        imageUrl: "/images/pokemons",
+        imageUrl: "/images/pokemons/urugamosu.png",
     },
     {
         id: "baibanira",
