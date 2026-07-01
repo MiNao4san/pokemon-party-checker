@@ -8,6 +8,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["ガブリアス", "ガブ"],
         imageUrl: "/images/pokemons/gaburiasu.png",
+        attackStyle: "物理",
     },
 
     {
@@ -17,6 +18,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "メガ",
         searchKeywords: ["メガガブリアス", "ガブリアス", "ガブ", "メガ"],
         imageUrl: "/images/pokemons/mega-gaburiasu.png",
+        attackStyle: "物理",
     },
     {
         id: "mimikkyu",
@@ -25,6 +27,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["ミミッキュ", "ミミ"],
         imageUrl: "/images/pokemons/mimikkyu.png",
+        attackStyle: "物理",
     },
     {
         id: "masuka-nya",
@@ -33,6 +36,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["マスカーニャ", "マス"],
         imageUrl: "/images/pokemons/masuka-nya.png",
+        attackStyle: "物理",
     },
     {
         id: "buirijurasu",
@@ -41,6 +45,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["ブリジュラス", "ブリ"],
         imageUrl: "/images/pokemons/burijurasu.png",
+        attackStyle: "特殊",
     },
     {
         id: "metagurosu",
@@ -49,6 +54,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["メタグロス", "メタ"],
         imageUrl: "/images/pokemons/metagurosu.png",
+        attackStyle: "物理",
     },
     {
         id: "mega-metagurosu",
@@ -57,6 +63,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "メガ",
         searchKeywords: ["メガメタグロス", "メタグロス", "メタ", "メガ"],
         imageUrl: "/images/pokemons/mega-metagurosu.png",
+        attackStyle: "物理",
     },
     {
         id: "raichu",
@@ -65,6 +72,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["ライチュウ", "ライ"],
         imageUrl: "/images/pokemons/raichu.png",
+        attackStyle: "特殊",
     },
     {
         id: "mega-raichu-y",
@@ -73,6 +81,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "メガ",
         searchKeywords: ["メガライチュウY", "ライチュウ", "ライ", "メガ"],
         imageUrl: "/images/pokemons/raichu.png",
+        attackStyle: "特殊",
     },
     {
         id: "riza-donn",
@@ -81,6 +90,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["リザードン", "リザ"],
         imageUrl: "/images/pokemons/riza-donn.png",
+        attackStyle: "特殊",
     },
 
     {
@@ -96,6 +106,7 @@ export const pokemonData: PokemonData[] = [
             "メガ",
         ],
         imageUrl: "/images/pokemons/mega-riza-donn-x.png",
+        attackStyle: "物理",
     },
 
     {
@@ -117,6 +128,7 @@ export const pokemonData: PokemonData[] = [
             multiplier: 0.5,
         },
         imageUrl: "/images/pokemons/mega-riza-donn-y.png",
+        attackStyle: "特殊",
     },
     {
         id: "mukuho-ku",
@@ -125,6 +137,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["ムクホーク", "ムク"],
         imageUrl: "/images/pokemons/mukuho-ku.png",
+        attackStyle: "物理",
     },
     {
         id: "mega-mukuho-ku",
@@ -133,6 +146,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "メガ",
         searchKeywords: ["メガムクホーク", "ムクホーク", "ムク", "メガ"],
         imageUrl: "/images/pokemons/mega-mukuho-ku.png",
+        attackStyle: "物理",
     },
     {
         id: "a-ma-gaa",
@@ -141,6 +155,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["アーマーガア", "アーマー", "ガア"],
         imageUrl: "/images/pokemons/a-ma-gaa.png",
+        attackStyle: "物理",
     },
     {
         id: "aro-rakyuukonn",
@@ -149,6 +164,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["アローラキュウコン", "アローラ", "キュウコン"],
         imageUrl: "/images/pokemons/aro-rakyuukonn.png",
+        attackStyle: "特殊",
     },
     {
         id: "kabarudonn",
@@ -157,6 +173,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["カバルドン", "カバ"],
         imageUrl: "/images/pokemons/kabarudonn.png",
+        attackStyle: "物理",
     },
     {
         id: "basha-mo",
@@ -165,6 +182,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["バシャーモ", "バシャ"],
         imageUrl: "/images/pokemons/basha-mo.png",
+        attackStyle: "物理",
     },
     {
         id: "mega-basha-mo",
@@ -173,6 +191,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "メガ",
         searchKeywords: ["メガバシャーモ", "バシャーモ", "バシャ", "メガ"],
         imageUrl: "/images/pokemons/mega-basha-mo.png",
+        attackStyle: "物理",
     },
     {
         id: "asire-nu",
@@ -181,6 +200,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["アシレーヌ", "アシレ"],
         imageUrl: "/images/pokemons/asire-nu.png",
+        attackStyle: "特殊",
     },
     {
         id: "sazanndora",
@@ -189,6 +209,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["サザンドラ", "サザン"],
         imageUrl: "/images/pokemons/sazanndora.png",
+        attackStyle: "特殊",
     },
     {
         id: "idaitou",
@@ -197,6 +218,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["イダイトウ", "イダ"],
         imageUrl: "/images/pokemons/idaitou.png",
+        attackStyle: "物理",
     },
     {
         id: "gyarados",
@@ -205,6 +227,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["ギャラドス", "ギャラ"],
         imageUrl: "/images/pokemons/gyaradosu.png",
+        attackStyle: "物理",
     },
     {
         id: "mega-gyarados",
@@ -213,6 +236,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "メガ",
         searchKeywords: ["メガギャラドス", "ギャラドス", "ギャラ", "メガ"],
         imageUrl: "/images/pokemons/mega-gyaradosu.png",
+        attackStyle: "物理",
     },
     {
         id: "ragura-ji",
@@ -221,6 +245,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["ラグラージ", "ラグ"],
         imageUrl: "/images/pokemons/ragura-ji.png",
+        attackStyle: "物理",
     },
     {
         id: "mega-ragura-ji",
@@ -229,6 +254,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "メガ",
         searchKeywords: ["メガラグラージ", "ラグラージ", "ラグ", "メガ"],
         imageUrl: "/images/pokemons/mega-ragura-ji.png",
+        attackStyle: "物理",
     },
     {
         id: "kirahuroru",
@@ -237,6 +263,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["キラフロル", "キラ"],
         imageUrl: "/images/pokemons/kirahuroru.png",
+        attackStyle: "特殊",
     },
     {
         id: "mega-kirahuroru",
@@ -245,6 +272,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "メガ",
         searchKeywords: ["メガキラフロル", "キラフロル", "キラ", "メガ"],
         imageUrl: "/images/pokemons/mega-kirahuroru.png",
+        attackStyle: "特殊",
     },
     {
         id: "mafokusi-",
@@ -253,6 +281,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["マフォクシー", "マフォ"],
         imageUrl: "/images/pokemons/mafokusi-.png",
+        attackStyle: "特殊",
     },
     {
         id: "mega-mafokusi-",
@@ -261,6 +290,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "メガ",
         searchKeywords: ["メガマフォクシー", "マフォクシー", "マフォ", "メガ"],
         imageUrl: "/images/pokemons/mega-mafokusi-.png",
+        attackStyle: "特殊",
     },
     {
         id: "rotomu-whosshu",
@@ -280,6 +310,7 @@ export const pokemonData: PokemonData[] = [
             multiplier: 0,
         },
         imageUrl: "/images/pokemons/rotomu-whosshu.png",
+        attackStyle: "特殊",
     },
     {
         id: "kairyu",
@@ -288,6 +319,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["カイリュー", "カイリュ"],
         imageUrl: "/images/pokemons/kairyu.png",
+        attackStyle: "両刀",
     },
     {
         id: "mega-kairyu",
@@ -296,6 +328,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "メガ",
         searchKeywords: ["メガカイリュー", "カイリュー", "カイリュ", "メガ"],
         imageUrl: "/images/pokemons/mega-kairyu.png",
+        attackStyle: "特殊",
     },
     {
         id: "o-ronge",
@@ -304,6 +337,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["オーロンゲ", "オー", "ロンゲ"],
         imageUrl: "/images/pokemons/o-ronnge.png",
+        attackStyle: "物理",
     },
     {
         id: "perippa-",
@@ -319,6 +353,7 @@ export const pokemonData: PokemonData[] = [
             multiplier: 0.5,
         },
         imageUrl: "/images/pokemons/perippa-.png",
+        attackStyle: "特殊",
     },
     {
         id: "sa-hugo-",
@@ -327,6 +362,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["サーフゴー", "サーフ", "サー"],
         imageUrl: "/images/pokemons/sa-hugo-.png",
+        attackStyle: "特殊",
     },
     {
         id: "kuti-to",
@@ -335,6 +371,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["クチート", "クチ"],
         imageUrl: "/images/pokemons/kuti-to.png",
+        attackStyle: "物理",
     },
     {
         id: "mega-kuti-to",
@@ -343,6 +380,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "メガ",
         searchKeywords: ["メガクチート", "クチート", "クチ", "メガ"],
         imageUrl: "/images/pokemons/mega-kuti-to.png",
+        attackStyle: "物理",
     },
     {
         id: "raudobo-nn",
@@ -351,6 +389,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["ラウドボーン", "ラウド", "ラウ"],
         imageUrl: "/images/pokemons/raudobo-nn.png",
+        attackStyle: "特殊",
     },
     {
         id: "dodogezann",
@@ -359,6 +398,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["ドドゲザン", "ドド", "ゲザン"],
         imageUrl: "/images/pokemons/dodogezann.png",
+        attackStyle: "物理",
     },
     {
         id: "gekkouga",
@@ -367,6 +407,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["ゲッコウガ", "ゲッコ", "ゲコ", "ゲッ"],
         imageUrl: "/images/pokemons/gekkouga.png",
+        attackStyle: "特殊",
     },
     {
         id: "mega-gekkouga",
@@ -375,6 +416,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "メガ",
         searchKeywords: ["ゲッコウガ", "メガゲッコウガ", "ゲッコ", "ゲコ", "ゲッ", "メガ"],
         imageUrl: "/images/pokemons/mega-gekkouga.png",
+        attackStyle: "特殊",
     },
     {
         id: "genga-",
@@ -383,6 +425,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["ゲンガー", "ゲン"],
         imageUrl: "/images/pokemons/gennga-.png",
+        attackStyle: "特殊",
     },
     {
         id: "mega-genga-",
@@ -391,6 +434,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "メガ",
         searchKeywords: ["ゲンガー", "メガゲンガー", "ゲン", "メガ"],
         imageUrl: "/images/pokemons/mega-gennga-.png",
+        attackStyle: "特殊",
     },
     {
         id: "doramidoro",
@@ -399,6 +443,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["ドラミドロ", "ドラ"],
         imageUrl: "/images/pokemons/doramidoro.png",
+        attackStyle: "特殊",
     },
     {
         id: "mega-doramidoro",
@@ -407,6 +452,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "メガ",
         searchKeywords: ["ドラミドロ", "メガドラミドロ", "メガ", "ドラ"],
         imageUrl: "/images/pokemons/mega-doramidoro.png",
+        attackStyle: "特殊",
     },
     {
         id: "girugarudo",
@@ -415,6 +461,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["ギルガルド", "ガルド", "ギル"],
         imageUrl: "/images/pokemons/girugarudo.png",
+        attackStyle: "両刀",
     },
     {
         id: "hassamu",
@@ -423,6 +470,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["ハッサム", "ハ"],
         imageUrl: "/images/pokemons/hassamu.png",
+        attackStyle: "物理",
     },
     {
         id: "mega-hassamu",
@@ -431,6 +479,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "メガ",
         searchKeywords: ["メガハッサム", "ハッサム", "ハ", "メガ"],
         imageUrl: "/images/pokemons/mega-hassamu.png",
+        attackStyle: "物理",
     },
     {
         id: "doraparuto",
@@ -439,6 +488,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["ドラパルト", "ドラ"],
         imageUrl: "/images/pokemons/doraparuto.png",
+        attackStyle: "両刀",
     },
     {
         id: "hisuidaikennki",
@@ -447,6 +497,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["ダイケンキ", "ヒスイダイケンキ", "ヒスイ", "ダイ"],
         imageUrl: "/images/pokemons/hisuidaikennki.png",
+        attackStyle: "物理",
     },
     {
         id: "urugamosu",
@@ -455,6 +506,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["ウルガモス", "ウル"],
         imageUrl: "/images/pokemons/urugamosu.png",
+        attackStyle: "特殊",
     },
     {
         id: "baibanira",
@@ -463,6 +515,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["バイバニラ", "バイ"],
         imageUrl: "/images/pokemons",
+        attackStyle: "特殊",
     },
     {
         id: "mimiroppu",
@@ -471,6 +524,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["ミミロップ", "ミミ"],
         imageUrl: "/images/pokemons",
+        attackStyle: "物理",
     },
     {
         id: "mega-mimiroppu",
@@ -479,6 +533,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "メガ",
         searchKeywords: ["ミミロップ", "ミミ", "メガミミロップ", "メガ"],
         imageUrl: "/images/pokemons",
+        attackStyle: "物理",
     },
     {
         id: "meganiumu",
@@ -487,6 +542,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["メガニウム", "メガ", "メガニ"],
         imageUrl: "/images/pokemons",
+        attackStyle: "特殊",
     },
     {
         id: "mega-meganiumu",
@@ -495,6 +551,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "メガ",
         searchKeywords: ["メガニウム", "メガ", "メガニ", "メガメガニウム", "メガメ", "メガメガ"],
         imageUrl: "/images/pokemons",
+        attackStyle: "特殊",
     },
     {
         id: "konoyozaru",
@@ -503,6 +560,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["コノヨザル", "コノ"],
         imageUrl: "/images/pokemons",
+        attackStyle: "物理",
     },
     {
         id: "suta-mi-",
@@ -511,6 +569,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["スターミー", "スター", "スタ"],
         imageUrl: "/images/pokemons",
+        attackStyle: "特殊",
     },
     {
         id: "mega-suta-mi-",
@@ -519,6 +578,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "メガ",
         searchKeywords: ["スターミー", "スター", "スタ", "メガ", "メガスターミー"],
         imageUrl: "/images/pokemons",
+        attackStyle: "物理",
     },
     {
         id: "soubureizu",
@@ -527,6 +587,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["ソウブレイズ", "ソウ"],
         imageUrl: "/images/pokemons",
+        attackStyle: "物理",
     },
     {
         id: "huraette:eienn",
@@ -535,6 +596,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["フラエッテ", "フラ", "フラエッテ:永遠"],
         imageUrl: "/images/pokemons",
+        attackStyle: "特殊",
     },
     {
         id: "mega-huraette",
@@ -543,6 +605,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "メガ",
         searchKeywords: ["フラエッテ", "フラ", "フラエッテ:永遠"],
         imageUrl: "/images/pokemons",
+        attackStyle: "特殊",
     },
 
     {
@@ -551,6 +614,7 @@ export const pokemonData: PokemonData[] = [
         types: ["くさ", "どく"],
         formLabel: "通常",
         searchKeywords: ["フシギバナ", "フシギ", "フシ"],
+        attackStyle: "特殊",
     },
 
 
@@ -566,6 +630,7 @@ export const pokemonData: PokemonData[] = [
             affectedAttackTypes: ["ほのお", "こおり"],
             multiplier: 0.5,
         },
+        attackStyle: "特殊",
     },
     {
         id: "burakki-",
@@ -574,6 +639,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["ブラッキー", "ブラ"],
         imageUrl: "/images/pokemons",
+        attackStyle: "補助",
     },
     {
         id: "harabari-",
@@ -582,6 +648,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["ハラバリー", "ハラ"],
         imageUrl: "/images/pokemons",
+        attackStyle: "特殊",
     },
     {
         id: "oonyu-ra",
@@ -590,6 +657,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["オオニューラ", "オオ"],
         imageUrl: "/images/pokemons",
+        attackStyle: "物理",
     },
     {
         id: "rukario",
@@ -598,6 +666,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["ルカリオ", "ルカ", "はどうのゆうしゃ", "はどう"],
         imageUrl: "/images/pokemons",
+        attackStyle: "両刀",
     },
     {
         id: "mega-rukario",
@@ -606,6 +675,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "メガ",
         searchKeywords: ["メガルカリオ", "ルカリオ", "ルカ", "メガ"],
         imageUrl: "/images/pokemons",
+        attackStyle: "両刀",
     },
     {
         id: "kamekkusu",
@@ -614,6 +684,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["カメックス", "カメ"],
         imageUrl: "/images/pokemons",
+        attackStyle: "特殊",
     },
     {
         id: "mega-kamekkusu",
@@ -622,6 +693,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "メガ",
         searchKeywords: ["カメックス", "カメ", "メガカメックス", "メガ"],
         imageUrl: "/images/pokemons",
+        attackStyle: "特殊",
     },
     {
         id: "eruhu-nn",
@@ -630,6 +702,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["エルフーン", "エル", "エルフ"],
         imageUrl: "/images/pokemons",
+        attackStyle: "特殊",
     },
     {
         id: "rotomu-hi-to",
@@ -643,7 +716,8 @@ export const pokemonData: PokemonData[] = [
             kind: "attackTypeMultiplier",
             affectedAttackTypes: ["じめん"],
             multiplier: 0,
-        }
+        },
+        attackStyle: "特殊",
     },
     {
         id: "banngirasu",
@@ -652,6 +726,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["バンギラス", "バン"],
         imageUrl: "/images/pokemons",
+        attackStyle: "物理",
     },
     {
         id: "mega-banngirasu",
@@ -660,6 +735,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "メガ",
         searchKeywords: ["メガバンギラス", "バンギラス", "バン", "メガ"],
         imageUrl: "/images/pokemons",
+        attackStyle: "物理",
     },
     {
         id: "dohidoide",
@@ -668,6 +744,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["ドヒドイデ", "ドヒド", "ドヒ"],
         imageUrl: "/images/pokemons",
+        attackStyle: "補助",
     },
     {
         id: "mannmu-",
@@ -676,6 +753,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["マンムー", "マン"],
         imageUrl: "/images/pokemons",
+        attackStyle: "物理",
     },
     {
         id: "ninnfia",
@@ -684,6 +762,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["ニンフィア", "ニン"],
         imageUrl: "/images/pokemons",
+        attackStyle: "特殊",
     },
     {
         id: "mariruri",
@@ -692,6 +771,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["マリルリ", "マリル", "マリ"],
         imageUrl: "/images/pokemons",
+        attackStyle: "物理",
     },
     {
         id: "hisuizoroa-ku",
@@ -700,6 +780,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["ヒスイゾロアーク", "ヒスイ", "ゾロアーク", "ゾロ"],
         imageUrl: "/images/pokemons",
+        attackStyle: "特殊",
     },
     {
         id: "doryuuzu",
@@ -708,6 +789,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["ドリュウズ", "ドリ"],
         imageUrl: "/images/pokemons",
+        attackStyle: "物理",
     },
     {
         id: "pikusi-",
@@ -716,6 +798,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["ピクシー", "ピク", "ギエピー"],
         imageUrl: "/images/pokemons",
+        attackStyle: "特殊",
     },
     {
         id: "mega-pikusi-",
@@ -724,6 +807,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "メガ",
         searchKeywords: ["ピクシー", "ピク", "メガピクシー", "メガ"],
         imageUrl: "/images/pokemons",
+        attackStyle: "特殊",
     },
     {
         id: "mega-doryuuzu",
@@ -732,6 +816,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "メガ",
         searchKeywords: ["ドリュウズ", "ドリ", "メガドリュウズ", "メガ"],
         imageUrl: "/images/pokemons",
+        attackStyle: "物理",
     },
     {
         id: "yukimenoko",
@@ -740,6 +825,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["ユキメノコ", "ユキ", "メノコ"],
         imageUrl: "/images/pokemons",
+        attackStyle: "特殊",
     },
     {
         id: "mega-yukimenoko",
@@ -748,6 +834,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "メガ",
         searchKeywords: ["ユキメノコ", "ユキ", "メノコ", "メガユキメノコ", "メガ"],
         imageUrl: "/images/pokemons",
+        attackStyle: "特殊",
     },
     {
         id: "mirokarosu",
@@ -756,6 +843,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["ミロカロス", "ミロ", "カロス"],
         imageUrl: "/images/pokemons",
+        attackStyle: "特殊",
     },
     {
         id: "kuesupatora",
@@ -764,6 +852,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["クエスパトラ", "クエス", "パトラ"],
         imageUrl: "/images/pokemons",
+        attackStyle: "特殊",
     },
     {
         id: "onisizukumo",
@@ -772,6 +861,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["オニシズクモ", "オニ", "シズクモ"],
         imageUrl: "/images/pokemons",
+        attackStyle: "物理",
     },
     {
         id: "metamonn",
@@ -780,6 +870,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["メタモン", "メタ", "モン"],
         imageUrl: "/images/pokemons",
+        attackStyle: "不明",
     },
     {
         id: "ea-mudo",
@@ -788,6 +879,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["エアームド", "エア", "ームド"],
         imageUrl: "/images/pokemons",
+        attackStyle: "補助",
     },
     {
         id: "sa-naito",
@@ -796,6 +888,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["サーナイト", "サー"],
         imageUrl: "/images/pokemons",
+        attackStyle: "特殊",
     },
     {
         id: "mega-sa-naito",
@@ -804,6 +897,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "メガ",
         searchKeywords: ["サーナイト", "サー", "メガサーナイト", "メガ"],
         imageUrl: "/images/pokemons",
+        attackStyle: "特殊",
     },
     {
         id: "kabigonn",
@@ -812,6 +906,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["カビゴン", "カビ"],
         imageUrl: "/images/pokemons",
+        attackStyle: "物理",
     },
     {
         id: "jukainn",
@@ -820,6 +915,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["ジュカイン", "ジュ"],
         imageUrl: "/images/pokemons",
+        attackStyle: "特殊",
     },
     {
         id: "mega-jukainn",
@@ -834,6 +930,7 @@ export const pokemonData: PokemonData[] = [
             multiplier: 0,
         },
         imageUrl: "/images/pokemons",
+        attackStyle: "特殊",
     },
     {
         id: "yabasotya",
@@ -842,6 +939,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["ヤバソチャ", "ヤバ"],
         imageUrl: "/images/pokemons",
+        attackStyle: "特殊",
     },
     {
         id: "sibirudonn",
@@ -856,6 +954,7 @@ export const pokemonData: PokemonData[] = [
             multiplier: 0,
         },
         imageUrl: "/images/pokemons",
+        attackStyle: "両刀",
     },
     {
         id: "mega-sibirudonn",
@@ -870,6 +969,7 @@ export const pokemonData: PokemonData[] = [
             multiplier: 0,
         },
         imageUrl: "/images/pokemons",
+        attackStyle: "両刀",
     },
     {
         id: "jaro-da",
@@ -878,6 +978,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["ジャローダ", "ジャ"],
         imageUrl: "/images/pokemons",
+        attackStyle: "特殊",
     },
     {
         id: "erureido",
@@ -886,6 +987,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["エルレイド", "エル"],
         imageUrl: "/images/pokemons",
+        attackStyle: "物理",
     },
     {
         id: "mega-erureido",
@@ -894,6 +996,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "メガ",
         searchKeywords: ["エルレイド", "エル", "メガエルレイド", "メガ"],
         imageUrl: "/images/pokemons",
+        attackStyle: "物理",
     },
 
     {
@@ -913,5 +1016,6 @@ export const pokemonData: PokemonData[] = [
             affectedAttackTypes: ["じめん"],
             multiplier: 0,
         },
+        attackStyle: "特殊",
     },
 ];

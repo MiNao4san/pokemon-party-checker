@@ -31,10 +31,12 @@ export type DefensiveAbilityEffect = {
     multiplier: number;
 };
 
+export type AttackStyle = "物理" | "特殊" | "両刀" | "補助" | "不明";
 export type PokemonData = {
     id: string;
     name: string;
     types: PokemonType[];
+    attackStyle?: AttackStyle;
 
     formLabel?: string;
     searchKeywords: string[];

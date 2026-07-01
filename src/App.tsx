@@ -179,8 +179,10 @@ function App() {
       return [];
     }
 
-    return getMoveCandidates(moveEditor.query);
-  }, [moveEditor]);
+    const targetPokemon = partySlots[moveEditor.slotIndex]?.pokemon ?? undefined;
+
+    return getMoveCandidates(moveEditor.query, targetPokemon);
+  }, [moveEditor, partySlots]);
 
   function openPokemonModal(slotIndex: number) {
     setActiveSlotIndex(slotIndex);
@@ -1280,7 +1282,10 @@ function getSearchCandidates(
     .slice(0, 80);
 }
 
-function getMoveCandidates(query: string): MoveData[] {
+function getMoveCandidates(
+  query: string,
+  pokemon?: PokemonData
+): MoveData[] {
   const normalizedQuery = normalizeSearchText(query);
 
   return moveData
@@ -1291,7 +1296,67 @@ function getMoveCandidates(query: string): MoveData[] {
 
       return normalizeSearchText(move.name).includes(normalizedQuery);
     })
+    .sort((a, b) => {
+      if (!pokemon) {
+        return 0;
+      }
+
+      const scoreA = getMoveCandidateScore(a, pokemon);
+      const scoreB = getMoveCandidateScore(b, pokemon);
+
+      if (scoreA !== scoreB) {
+        return scoreB - scoreA;
+      }
+
+      return moveData.indexOf(a) - moveData.indexOf(b);
+    })
     .slice(0, 12);
+}
+function getMoveCandidateScore(move: MoveData, pokemon: PokemonData) {
+  let score = 0;
+
+  const isSameType = pokemon.types.includes(move.type);
+
+  if (isSameType) {
+    score += 100;
+  }
+
+  if (pokemon.attackStyle === "物理" && move.category === "物理") {
+    score += 40;
+  }
+
+  if (pokemon.attackStyle === "特殊" && move.category === "特殊") {
+    score += 40;
+  }
+
+  if (
+    pokemon.attackStyle === "両刀" &&
+    (move.category === "物理" || move.category === "特殊")
+  ) {
+    score += 25;
+  }
+
+  if (pokemon.attackStyle === "補助") {
+    if (isSameType) {
+      score += 10;
+    }
+
+    if (move.category === "その他") {
+      score -= 20;
+    }
+  }
+
+  if (pokemon.attackStyle === "不明" || pokemon.attackStyle === undefined) {
+    if (isSameType) {
+      score += 10;
+    }
+  }
+
+  if (move.category === "その他") {
+    score -= 10;
+  }
+
+  return score;
 }
 
 function analyzeOffenseSingleTypesFromSlots(
