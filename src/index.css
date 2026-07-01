@@ -1865,14 +1865,19 @@ body::after {
 }
 
 @media (min-width: 1100px) {
-  body::before {
-    left: 0;
-    background-position: left top;
+  body {
+    background-color: #ffffff;
+    background-image: url("/images/ui/haikei.jpg");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    background-attachment: fixed;
   }
 
+  body::before,
   body::after {
-    right: 0;
-    background-position: right top;
+    display: none !important;
+    content: none !important;
   }
 
   #root {
@@ -1882,30 +1887,33 @@ body::after {
 
   .app {
     max-width: 1440px;
-    margin: 0 auto;
-    background: rgba(255, 255, 255, 0.96);
     min-height: 100vh;
-    box-shadow: -1px 0 0 rgba(226, 232, 240, 0.9),
+    margin: 0 auto;
+
+    background: #ffffff;
+
+    box-shadow:
+      -1px 0 0 rgba(226, 232, 240, 0.9),
       1px 0 0 rgba(226, 232, 240, 0.9);
   }
 }
 
 @media (max-width: 1099px) {
-
-  body::before,
-  body::after {
-    display: none;
-  }
-
   body {
     background-image: none;
     background-color: #ffffff;
   }
 
+  body::before,
+  body::after {
+    display: none !important;
+    content: none !important;
+  }
+
   .app {
+    width: 100%;
     background: #ffffff;
     box-shadow: none;
-    width: 100%;
   }
 }
 
