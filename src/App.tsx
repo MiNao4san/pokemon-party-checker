@@ -1237,19 +1237,36 @@ function TypeBadge(props: { type: PokemonType }) {
     </span>
   );
 }
+function normalizeSearchText(value: string) {
+  return value
+    .trim()
+    .toLowerCase()
+    .replace(/[ァ-ン]/g, (char) =>
+      String.fromCharCode(char.charCodeAt(0) - 0x60)
+    );
+}
 
 function getSearchCandidates(
   query: string,
   selectedTypeFilters: PokemonType[]
 ): PokemonData[] {
-  const normalizedQuery = query.trim().toLowerCase();
+  const normalizedQuery = normalizeSearchText(query);
 
   return pokemonData
     .filter((pokemon) => {
+      const searchTargets = [
+        pokemon.name,
+        ...pokemon.searchKeywords,
+        normalizeSearchText(pokemon.name),
+        ...pokemon.searchKeywords.map((keyword) =>
+          normalizeSearchText(keyword)
+        ),
+      ];
+
       const matchesQuery =
         normalizedQuery === "" ||
-        [pokemon.name, ...pokemon.searchKeywords].some((target) =>
-          target.toLowerCase().includes(normalizedQuery)
+        searchTargets.some((target) =>
+          normalizeSearchText(target).includes(normalizedQuery)
         );
 
       const matchesType =
