@@ -430,7 +430,7 @@ export const pokemonData: PokemonData[] = [
         types: ["はがね", "むし"],
         formLabel: "メガ",
         searchKeywords: ["メガハッサム", "ハッサム", "ハ", "メガ"],
-        imageUrl: "/pokemon/public/images/pokemons/mega-hassamu.png",
+        imageUrl: "/images/pokemons/mega-hassamu.png",
     },
     {
         id: "doraparuto",
