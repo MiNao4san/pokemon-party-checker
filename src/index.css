@@ -1,0 +1,2477 @@
+:root {
+  --text: #6b6375;
+  --text-h: #08060d;
+  --bg: #fff;
+  --border: #e5e4e7;
+  --code-bg: #f4f3ec;
+  --accent: #aa3bff;
+  --accent-bg: rgba(170, 59, 255, 0.1);
+  --accent-border: rgba(170, 59, 255, 0.5);
+  --social-bg: rgba(244, 243, 236, 0.5);
+  --shadow:
+    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.18px;
+  color-scheme: light dark;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #9ca3af;
+    --text-h: #f3f4f6;
+    --bg: #16171d;
+    --border: #2e303a;
+    --code-bg: #1f2028;
+    --accent: #c084fc;
+    --accent-bg: rgba(192, 132, 252, 0.15);
+    --accent-border: rgba(192, 132, 252, 0.5);
+    --social-bg: rgba(47, 48, 58, 0.5);
+    --shadow:
+      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+  }
+
+  #social .button-icon {
+    filter: invert(1) brightness(2);
+  }
+}
+
+#root {
+  width: 1126px;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  border-inline: 1px solid var(--border);
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2 {
+  font-family: var(--heading);
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: 56px;
+  letter-spacing: -1.68px;
+  margin: 32px 0;
+
+  @media (max-width: 1024px) {
+    font-size: 36px;
+    margin: 20px 0;
+  }
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 118%;
+  letter-spacing: -0.24px;
+  margin: 0 0 8px;
+
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
+}
+
+p {
+  margin: 0;
+}
+
+code,
+.counter {
+  font-family: var(--mono);
+  display: inline-flex;
+  border-radius: 4px;
+  color: var(--text-h);
+}
+
+code {
+  font-size: 15px;
+  line-height: 135%;
+  padding: 4px 8px;
+  background: var(--code-bg);
+}
+
+.showAllButton {
+  margin-top: 12px;
+  border: 1px solid #ccc;
+  background: #fff;
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+
+.detailList {
+  display: grid;
+  gap: 8px;
+  padding: 8px;
+  background: #f8f9fa;
+}
+
+.detailItem {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.typeSummaryCard {
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid #dfe7f2;
+  border-radius: 24px;
+  padding: 22px;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.06);
+}
+
+.summaryTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.summaryTitle h3 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.accentBar {
+  width: 5px;
+  height: 28px;
+  border-radius: 999px;
+  background: #f43f5e;
+}
+
+.summaryPanels {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.summaryPanel {
+  border-radius: 22px;
+  padding: 18px 20px;
+}
+
+.summaryPanel h4 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.summaryPanel p {
+  margin: 0 0 14px;
+  color: #667085;
+  line-height: 1.6;
+}
+
+.dangerPanel {
+  background: #fff7ed;
+}
+
+.dangerPanel h4 {
+  color: #a16207;
+}
+
+.strongPanel {
+  background: #f0fdf4;
+}
+
+.strongPanel h4 {
+  color: #15803d;
+}
+
+.summaryBadgeRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.emptySummaryText {
+  color: #667085;
+  font-weight: 700;
+}
+
+.typeResistanceGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px 16px;
+}
+
+.typeResistanceRow {
+  display: grid;
+  grid-template-columns: minmax(120px, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  background: #f8fafc;
+  border-radius: 999px;
+  padding: 6px 10px;
+}
+
+.typeResistanceBar {
+  border-radius: 999px;
+  padding: 6px 12px;
+  color: #fff;
+  font-weight: 900;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+.typeResistanceCounts {
+  display: flex;
+  gap: 8px;
+  font-weight: 900;
+}
+
+.weakCount {
+  color: #dc2626;
+}
+
+.resistCount {
+  color: #15803d;
+}
+
+.immuneCount {
+  color: #6b7280;
+}
+
+@media (max-width: 900px) {
+  .typeResistanceGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .typeSummaryCard {
+    padding: 16px;
+  }
+
+  .typeResistanceGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .typeResistanceRow {
+    grid-template-columns: 1fr;
+    border-radius: 18px;
+  }
+
+  .typeResistanceCounts {
+    justify-content: center;
+  }
+}
+
+.offenseSummaryCard {
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid #dbeafe;
+  border-radius: 24px;
+  padding: 22px;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.06);
+}
+
+.offenseSummaryTitle h3 {
+  color: #1e3a8a;
+}
+
+.offenseAccentBar {
+  width: 5px;
+  height: 28px;
+  border-radius: 999px;
+  background: #2563eb;
+}
+
+.offenseWeakPanel {
+  background: #eff6ff;
+}
+
+.offenseWeakPanel h4 {
+  color: #1d4ed8;
+}
+
+.offenseStrongPanel {
+  background: #f0fdfa;
+}
+
+.offenseStrongPanel h4 {
+  color: #0f766e;
+}
+
+.offenseCoverageGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px 16px;
+}
+
+.offenseCoverageRow {
+  display: grid;
+  grid-template-columns: minmax(120px, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  background: #f8fafc;
+  border-radius: 999px;
+  padding: 6px 10px;
+}
+
+.offenseCoverageBar {
+  border-radius: 999px;
+  padding: 6px 12px;
+  color: #fff;
+  font-weight: 900;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+.offenseCoverageCounts {
+  display: flex;
+  gap: 8px;
+  font-weight: 900;
+}
+
+.superCount {
+  color: #dc2626;
+}
+
+.neutralCount {
+  color: #2563eb;
+}
+
+.offenseResistedCount {
+  color: #64748b;
+}
+
+.offenseImmuneCount {
+  color: #111827;
+}
+
+@media (max-width: 900px) {
+  .offenseCoverageGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .offenseSummaryCard {
+    padding: 16px;
+  }
+
+  .offenseCoverageGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .offenseCoverageRow {
+    grid-template-columns: 1fr;
+    border-radius: 18px;
+  }
+
+  .offenseCoverageCounts {
+    justify-content: center;
+  }
+}
+
+.summaryModeSwitch {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 8px;
+  background: #e8eef8;
+  border: 1px solid #d6e0ef;
+  border-radius: 22px;
+  box-shadow: inset 0 1px 2px rgba(15, 23, 42, 0.08);
+}
+
+.summaryModeButton {
+  border: 0;
+  border-radius: 16px;
+  padding: 14px 16px;
+  background: transparent;
+  color: #64748b;
+  display: grid;
+  gap: 3px;
+  text-align: center;
+  transition:
+    background 0.16s ease,
+    color 0.16s ease,
+    transform 0.16s ease,
+    box-shadow 0.16s ease;
+}
+
+.summaryModeButton:hover {
+  color: #172033;
+}
+
+.summaryModeButton.active {
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.16);
+}
+
+.summaryModeButton.defenseActive {
+  background: linear-gradient(135deg, #f43f5e, #f97316);
+}
+
+.summaryModeButton.offenseActive {
+  background: linear-gradient(135deg, #2563eb, #06b6d4);
+}
+
+.switchMainText {
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.switchSubText {
+  font-size: 12px;
+  font-weight: 700;
+  opacity: 0.9;
+}
+
+@media (max-width: 640px) {
+  .summaryModeSwitch {
+    grid-template-columns: 1fr;
+  }
+
+  .summaryModeButton {
+    padding: 12px;
+  }
+}
+
+.pokemonListCard {
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid #dfe7f2;
+  border-radius: 24px;
+  padding: 22px;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.06);
+}
+
+.defenseListCard {
+  border-color: #fed7aa;
+}
+
+.offenseListCard {
+  border-color: #bfdbfe;
+}
+
+.pokemonListHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.pokemonListHeader h3 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.pokemonListHeader p {
+  margin: 4px 0 0;
+  color: #667085;
+}
+
+.pokemonRiskList {
+  display: grid;
+  gap: 10px;
+}
+
+.pokemonRiskRow {
+  border: 1px solid #e5eaf2;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.pokemonRiskMain {
+  width: 100%;
+  border: 0;
+  background: #fff;
+  color: #172033;
+  display: grid;
+  grid-template-columns: auto auto minmax(220px, 1fr) auto minmax(180px, auto) auto;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  text-align: left;
+}
+
+.pokemonRiskMain:hover {
+  background: #f8fafc;
+}
+
+.rankBadge {
+  min-width: 46px;
+  height: 34px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 999px;
+  background: #f1f5f9;
+  color: #64748b;
+  font-weight: 900;
+}
+
+.riskPokemonImage,
+.riskPokemonPlaceholder {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+}
+
+.riskPokemonImage {
+  object-fit: contain;
+  background: #f8fafc;
+}
+
+.riskPokemonPlaceholder {
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #eef2ff, #f8fafc);
+  color: #4f46e5;
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.riskPokemonInfo {
+  display: grid;
+  gap: 6px;
+}
+
+.riskPokemonInfo strong {
+  font-size: 18px;
+}
+
+.riskLabel {
+  justify-self: end;
+  white-space: nowrap;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-weight: 900;
+}
+
+.dangerRisk {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.warningRisk {
+  background: #fef3c7;
+  color: #a16207;
+}
+
+.safeRisk {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.riskReason {
+  color: #475569;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.expandIcon {
+  color: #64748b;
+  font-weight: 900;
+}
+
+.pokemonDetailList {
+  border-top: 1px solid #e5eaf2;
+  border-radius: 0;
+}
+
+.detailListTitle {
+  display: block;
+  text-align: center;
+  margin-bottom: 4px;
+  color: #334155;
+}
+
+@media (max-width: 900px) {
+  .pokemonRiskMain {
+    grid-template-columns: auto auto 1fr auto;
+  }
+
+  .riskLabel {
+    justify-self: start;
+  }
+
+  .riskReason {
+    grid-column: 3 / -1;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 640px) {
+  .pokemonListCard {
+    padding: 16px;
+  }
+
+  .pokemonRiskMain {
+    grid-template-columns: auto 1fr auto;
+    gap: 10px;
+  }
+
+  .rankBadge {
+    min-width: 40px;
+  }
+
+  .riskPokemonImage,
+  .riskPokemonPlaceholder {
+    display: none;
+  }
+
+  .riskLabel,
+  .riskReason {
+    grid-column: 2 / -1;
+  }
+}
+
+.movePartyGrid {
+  grid-template-columns: 1fr;
+}
+
+.moveEnabledSlot {
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(280px, 0.9fr) minmax(420px, 1.4fr) auto;
+  align-items: center;
+  gap: 18px;
+  padding: 16px;
+}
+
+.slotPokemonArea {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  display: grid;
+  grid-template-columns: 86px 1fr;
+  align-items: center;
+  gap: 16px;
+  padding: 0;
+  text-align: left;
+}
+
+.slotPokemonText {
+  display: grid;
+  gap: 8px;
+}
+
+.moveSlotPanel {
+  display: grid;
+  gap: 10px;
+}
+
+.moveSlotHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  color: #475569;
+  font-weight: 900;
+}
+
+.fallbackMoveNotice {
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.moveSlotGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(180px, 1fr));
+  gap: 8px;
+}
+
+.selectedMoveBar,
+.fallbackMoveBar,
+.addMoveButton {
+  min-height: 42px;
+  border-radius: 14px;
+  padding: 7px 9px;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 8px;
+}
+
+.selectedMoveBar {
+  background: #fff;
+  border: 1px solid #d8e1ee;
+}
+
+.fallbackMoveBar {
+  background: #f8fafc;
+  border: 1px dashed #cbd5e1;
+}
+
+.selectedMoveName {
+  font-weight: 900;
+  color: #172033;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.removeMoveButton {
+  width: 26px;
+  height: 26px;
+  border: 0;
+  border-radius: 999px;
+  background: #fee2e2;
+  color: #b91c1c;
+  font-weight: 900;
+  padding: 0;
+}
+
+.addMoveButton {
+  border: 1px dashed #cbd5e1;
+  background: #f8fafc;
+  color: #64748b;
+  font-weight: 900;
+  justify-content: center;
+  grid-template-columns: 1fr;
+}
+
+.addMoveButton:hover {
+  border-color: #6366f1;
+  color: #4f46e5;
+  background: #eef2ff;
+}
+
+.addMoveButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.moveSlotActions {
+  margin-top: 0;
+  justify-content: flex-end;
+}
+
+.moveModal {
+  width: min(760px, 100%);
+}
+
+.moveCandidateList {
+  overflow-y: auto;
+  padding: 18px 22px 22px;
+  display: grid;
+  gap: 8px;
+}
+
+.moveCandidateBar {
+  width: 100%;
+  min-height: 54px;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  color: #172033;
+  border-radius: 16px;
+  padding: 10px 14px;
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) auto auto;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+}
+
+.moveCandidateBar:hover {
+  border-color: #6366f1;
+  background: #f8fafc;
+}
+
+.moveCandidateBar:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.moveCandidateName {
+  font-size: 17px;
+  font-weight: 900;
+}
+
+.moveCandidateStatus {
+  color: #64748b;
+  font-weight: 900;
+}
+
+@media (max-width: 1000px) {
+  .moveEnabledSlot {
+    grid-template-columns: 1fr;
+  }
+
+  .moveSlotActions {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .slotPokemonArea {
+    grid-template-columns: 64px 1fr;
+  }
+
+  .moveSlotGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .moveCandidateBar {
+    grid-template-columns: 1fr auto;
+  }
+
+  .moveCandidateStatus {
+    grid-column: 1 / -1;
+  }
+}
+
+.inlineMoveSlotPanel {
+  position: relative;
+}
+
+.inlineMoveSlotGrid {
+  grid-template-columns: repeat(2, minmax(210px, 1fr));
+}
+
+.inlineMoveSearchBox {
+  min-height: 42px;
+  border: 2px solid #6366f1;
+  background: #fff;
+  border-radius: 14px;
+  padding: 5px 7px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.12);
+}
+
+.inlineMoveSearchBox input {
+  width: 100%;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: #172033;
+  font-weight: 800;
+  padding: 6px;
+}
+
+.inlineMoveSearchBox input::placeholder {
+  color: #94a3b8;
+}
+
+.inlineMoveCancelButton {
+  width: 28px;
+  height: 28px;
+  border: 0;
+  border-radius: 999px;
+  background: #fee2e2;
+  color: #b91c1c;
+  font-weight: 900;
+  padding: 0;
+}
+
+.inlineMoveCandidateList {
+  margin-top: 10px;
+  display: grid;
+  gap: 7px;
+  max-height: 260px;
+  overflow-y: auto;
+  padding: 4px;
+}
+
+.inlineMoveCandidateBar {
+  width: 100%;
+  min-height: 46px;
+  border: 1px solid #dfe7f2;
+  background: #fff;
+  color: #172033;
+  border-radius: 14px;
+  padding: 8px 12px;
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) auto auto;
+  align-items: center;
+  gap: 10px;
+  text-align: left;
+}
+
+.inlineMoveCandidateBar:hover {
+  border-color: #6366f1;
+  background: #f8fafc;
+}
+
+.inlineMoveCandidateBar:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.inlineMoveCandidateName {
+  font-weight: 900;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.inlineMoveCandidateStatus {
+  color: #64748b;
+  font-weight: 900;
+}
+
+.inlineMoveEmptyMessage {
+  padding: 12px;
+  border-radius: 14px;
+  background: #f8fafc;
+  color: #64748b;
+  font-weight: 700;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .inlineMoveSlotGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .inlineMoveCandidateBar {
+    grid-template-columns: 1fr auto;
+  }
+
+  .inlineMoveCandidateStatus {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ポケモン選択候補：画像＋名前だけにする */
+.imageOnlyCandidateCard {
+  min-height: 150px;
+  justify-content: center;
+  gap: 10px;
+}
+
+.imageOnlyCandidateCard strong {
+  font-size: 15px;
+  line-height: 1.3;
+}
+
+/* ポケモン選択候補の画像 */
+.candidatePokemonImage {
+  width: 82px;
+  height: 82px;
+  object-fit: contain;
+  display: block;
+}
+
+/* 画像がない場合の仮表示 */
+.candidateImagePlaceholder {
+  width: 82px;
+  height: 82px;
+  display: grid;
+  place-items: center;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #eef2ff, #f8fafc);
+  color: #4f46e5;
+  font-size: 32px;
+  font-weight: 900;
+}
+
+/* パーティ入力欄左側の画像 */
+.slotPokemonImage {
+  width: 86px;
+  height: 86px;
+  object-fit: contain;
+  display: block;
+  background: transparent;
+}
+
+.slotPokemonPlaceholder {
+  width: 86px;
+  height: 86px;
+  display: grid;
+  place-items: center;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #eef2ff, #f8fafc);
+  color: #4f46e5;
+  font-size: 34px;
+  font-weight: 900;
+}
+
+/* 苦手ポケリストの画像 */
+.riskPokemonImage {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  display: block;
+  background: #f8fafc;
+}
+
+.riskPokemonPlaceholder {
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #eef2ff, #f8fafc);
+  color: #4f46e5;
+  font-size: 24px;
+  font-weight: 900;
+}
+
+/* 苦手ポケリストで画像と名前が詰まりすぎないようにする */
+.pokemonRiskMain {
+  grid-template-columns: auto auto minmax(220px, 1fr) auto minmax(180px, auto) auto;
+}
+
+@media (max-width: 640px) {
+
+  .candidatePokemonImage,
+  .candidateImagePlaceholder {
+    width: 70px;
+    height: 70px;
+  }
+
+  .slotPokemonImage,
+  .slotPokemonPlaceholder {
+    width: 68px;
+    height: 68px;
+  }
+
+  .riskPokemonImage,
+  .riskPokemonPlaceholder {
+    width: 46px;
+    height: 46px;
+  }
+}
+
+/* ポケモン選択一覧の箱サイズを統一 */
+.candidateGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 150px));
+  justify-content: center;
+  align-items: stretch;
+  gap: 10px;
+}
+
+/* 画像＋名前だけの候補カード */
+.imageOnlyCandidateCard {
+  width: 150px;
+  height: 170px;
+  box-sizing: border-box;
+  padding: 12px 8px;
+  border-radius: 12px;
+
+  display: grid;
+  grid-template-rows: 112px 1fr;
+  align-items: center;
+  justify-items: center;
+  gap: 8px;
+
+  text-align: center;
+  overflow: hidden;
+}
+
+/* 候補カード内の画像サイズを統一 */
+.imageOnlyCandidateCard .candidatePokemonImage {
+  width: 108px;
+  height: 108px;
+  object-fit: contain;
+  display: block;
+}
+
+/* 画像がない場合の仮表示も同じサイズにする */
+.imageOnlyCandidateCard .candidateImagePlaceholder {
+  width: 108px;
+  height: 108px;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+}
+
+/* ポケモン名の文字サイズ・行数を統一 */
+.imageOnlyCandidateCard strong {
+  width: 100%;
+  min-height: 38px;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 900;
+}
+
+/* 小さい画面では少し縮める */
+@media (max-width: 640px) {
+  .candidateGrid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 120px));
+    gap: 8px;
+  }
+
+  .imageOnlyCandidateCard {
+    width: 120px;
+    height: 150px;
+    grid-template-rows: 92px 1fr;
+    padding: 10px 6px;
+  }
+
+  .imageOnlyCandidateCard .candidatePokemonImage,
+  .imageOnlyCandidateCard .candidateImagePlaceholder {
+    width: 88px;
+    height: 88px;
+  }
+
+  .imageOnlyCandidateCard strong {
+    font-size: 14px;
+  }
+}
+
+/* 上部の説明を減らしたパーティ入力エリア */
+.compactPartySection {
+  padding-top: 18px;
+}
+
+.compactActionRow {
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+/* 未選択ポケモン枠：3個 + 3個に並べる */
+.compactPartyGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
+  gap: 12px;
+  align-items: stretch;
+}
+
+.compactEmptySlot {
+  min-height: 74px;
+  border-radius: 18px;
+  padding: 14px 18px;
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.compactEmptySlot .plusIcon {
+  font-size: 22px;
+}
+
+.compactEmptySlot .slotNumber,
+.compactEmptySlot .slotHint {
+  font-size: 16px;
+  font-weight: 900;
+}
+
+/* 選択済みポケモンは横幅を使う */
+.moveEnabledSlot {
+  grid-column: 1 / -1;
+}
+
+/* ポケモン選択モーダル */
+.pokemonModalBackdrop {
+  background: rgba(15, 23, 42, 0.42);
+  backdrop-filter: blur(2px);
+}
+
+.pokemonSelectModal {
+  position: relative;
+  width: min(980px, calc(100vw - 32px));
+  max-height: min(86vh, 880px);
+  border-radius: 26px;
+  overflow: hidden;
+  box-shadow: 0 28px 80px rgba(15, 23, 42, 0.3);
+}
+
+.floatingCloseButton {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 3;
+}
+
+/* 検索欄を大きくする */
+.compactModalSearchArea {
+  padding: 24px 28px 16px;
+  display: grid;
+  gap: 14px;
+}
+
+.pokemonSearchInput {
+  width: 100%;
+  min-height: 52px;
+  border-radius: 16px;
+  border: 2px solid #dbe6f5;
+  padding: 0 18px;
+  font-size: 18px;
+  font-weight: 800;
+  color: #172033;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.pokemonSearchInput:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.14);
+}
+
+/* タイプフィルタ：9個 + 9個 */
+.compactTypeFilterGrid {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 6px;
+}
+
+.compactTypeFilter {
+  min-height: 32px;
+  border-radius: 999px;
+  padding: 0;
+  border: 1px solid #d7e1ee;
+  background: #f8fafc;
+  display: grid;
+  place-items: center;
+}
+
+.compactTypeFilter.selected {
+  border-color: #4f46e5;
+  background: #eef2ff;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.14);
+}
+
+.clearTypeFilterButton {
+  justify-self: end;
+  border: 0;
+  border-radius: 999px;
+  background: #eef2ff;
+  color: #4f46e5;
+  font-weight: 900;
+  padding: 8px 14px;
+}
+
+/* タイプバッジ共通：黒文字で見づらい問題を解消 */
+.readableTypeBadge {
+  display: inline-grid;
+  place-items: center;
+  min-width: 58px;
+  min-height: 26px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  text-shadow: 0 1px 1px rgba(15, 23, 42, 0.22);
+  box-sizing: border-box;
+}
+
+.compactTypeFilter .readableTypeBadge {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 32px;
+  font-size: 14px;
+  border-radius: 999px;
+}
+
+/* パーティ欄・リスト欄のタイプ行 */
+.typeRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  align-items: center;
+}
+
+/* 技候補リスト内のタイプバッジ */
+.inlineMoveCandidateBar .readableTypeBadge,
+.selectedMoveBar .readableTypeBadge {
+  min-width: 64px;
+}
+
+/* サマリーのタイプバッジ */
+.summaryBadgeRow .readableTypeBadge {
+  min-width: 74px;
+  min-height: 32px;
+  font-size: 15px;
+}
+
+/* サマリー下部の横バー内ではバッジが二重に見えないようにする */
+.typeResistanceBar,
+.offenseCoverageBar {
+  background: transparent !important;
+  display: flex;
+  align-items: center;
+}
+
+.typeResistanceBar .readableTypeBadge,
+.offenseCoverageBar .readableTypeBadge {
+  width: 100%;
+  min-height: 36px;
+  font-size: 15px;
+}
+
+/* 苦手相手リスト内のタイプバッジ */
+.pokemonRiskRow .readableTypeBadge {
+  min-width: 62px;
+  min-height: 24px;
+  font-size: 12px;
+}
+
+/* ポケモン選択候補：箱・画像・文字サイズ統一 */
+.candidateGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 150px));
+  justify-content: center;
+  align-items: stretch;
+  gap: 10px;
+  padding: 0 24px 28px;
+  overflow-y: auto;
+}
+
+.imageOnlyCandidateCard {
+  width: 150px;
+  height: 170px;
+  box-sizing: border-box;
+  padding: 12px 8px;
+  border-radius: 16px;
+  display: grid;
+  grid-template-rows: 112px 1fr;
+  align-items: center;
+  justify-items: center;
+  gap: 8px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.imageOnlyCandidateCard .candidatePokemonImage {
+  width: 108px;
+  height: 108px;
+  object-fit: contain;
+  display: block;
+}
+
+.imageOnlyCandidateCard .candidateImagePlaceholder {
+  width: 108px;
+  height: 108px;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+}
+
+.imageOnlyCandidateCard strong {
+  width: 100%;
+  min-height: 38px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 900;
+}
+
+/* レスポンシブ */
+@media (max-width: 900px) {
+  .compactPartyGrid {
+    grid-template-columns: repeat(2, minmax(180px, 1fr));
+  }
+
+  .compactTypeFilterGrid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .compactPartyGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .compactTypeFilterGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .pokemonSelectModal {
+    width: calc(100vw - 18px);
+    max-height: 88vh;
+    border-radius: 20px;
+  }
+
+  .compactModalSearchArea {
+    padding: 20px 16px 14px;
+  }
+
+  .candidateGrid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 120px));
+    gap: 8px;
+    padding: 0 14px 20px;
+  }
+
+  .imageOnlyCandidateCard {
+    width: 120px;
+    height: 150px;
+    grid-template-rows: 92px 1fr;
+    padding: 10px 6px;
+  }
+
+  .imageOnlyCandidateCard .candidatePokemonImage,
+  .imageOnlyCandidateCard .candidateImagePlaceholder {
+    width: 88px;
+    height: 88px;
+  }
+
+  .imageOnlyCandidateCard strong {
+    font-size: 14px;
+  }
+}
+
+/* ポケモン選択画面を通常レイアウトから切り離して、上層として表示 */
+.layeredPokemonModalBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 92px 20px 32px;
+  background: rgba(15, 23, 42, 0.38);
+  backdrop-filter: blur(2px);
+  overflow-y: auto;
+}
+
+.layeredPokemonSelectModal {
+  width: min(1080px, calc(100vw - 40px));
+  max-height: calc(100vh - 124px);
+  border-radius: 26px;
+  overflow: hidden;
+  background: #f8fafc;
+  box-shadow: 0 30px 90px rgba(15, 23, 42, 0.35);
+}
+
+/* 検索欄 + キャンセルを同じ箱に入れる */
+.pokemonSearchShell {
+  width: 100%;
+  min-height: 58px;
+  border: 2px solid #dbe6f5;
+  border-radius: 18px;
+  background: #fff;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 10px;
+  padding: 0 10px 0 18px;
+  box-sizing: border-box;
+}
+
+.pokemonSearchShell:focus-within {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.14);
+}
+
+.pokemonSearchShell .pokemonSearchInput {
+  min-height: 52px;
+  border: 0;
+  outline: none;
+  box-shadow: none;
+  padding: 0;
+  font-size: 18px;
+  font-weight: 800;
+  background: transparent;
+}
+
+.pokemonSearchShell .pokemonSearchInput:focus {
+  border: 0;
+  box-shadow: none;
+}
+
+.searchCancelButton {
+  min-height: 42px;
+  border: 1px solid #cbd5e1;
+  border-radius: 14px;
+  background: #fff;
+  color: #475569;
+  font-size: 15px;
+  font-weight: 900;
+  padding: 0 16px;
+}
+
+.searchCancelButton:hover {
+  background: #f1f5f9;
+  border-color: #94a3b8;
+}
+
+/* タイプフィルタ：未選択は白、選択中だけタイプ色 */
+.compactTypeFilter {
+  min-height: 34px;
+  border-radius: 999px;
+  border: 2px solid var(--type-bg);
+  background: #fff;
+  color: var(--type-bg);
+  font-size: 14px;
+  font-weight: 900;
+  padding: 0 10px;
+  transition:
+    background-color 120ms ease,
+    color 120ms ease,
+    transform 120ms ease,
+    box-shadow 120ms ease,
+    filter 120ms ease;
+}
+
+.compactTypeFilter:hover {
+  background: color-mix(in srgb, var(--type-bg) 14%, white);
+  transform: translateY(-1px);
+}
+
+.compactTypeFilter.selected {
+  background: var(--type-bg);
+  color: var(--type-text);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.18);
+  transform: translateY(-1px);
+}
+
+.compactTypeFilter.selected:hover {
+  filter: brightness(0.96);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.22);
+}
+
+/* 以前の青枠選択スタイルを打ち消す */
+.typeFilter.compactTypeFilter.selected {
+  border-color: var(--type-bg);
+}
+
+/* ポケモン追加ボタンなどのhover */
+.compactEmptySlot {
+  transition:
+    background-color 120ms ease,
+    border-color 120ms ease,
+    transform 120ms ease,
+    box-shadow 120ms ease;
+}
+
+.compactEmptySlot:hover {
+  background: #f8fafc;
+  border-color: #64748b;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+}
+
+.subButton {
+  transition:
+    background-color 120ms ease,
+    border-color 120ms ease,
+    transform 120ms ease,
+    box-shadow 120ms ease;
+}
+
+.subButton:hover {
+  background: #f1f5f9;
+  border-color: #94a3b8;
+  transform: translateY(-1px);
+}
+
+.imageOnlyCandidateCard {
+  transition:
+    background-color 120ms ease,
+    border-color 120ms ease,
+    transform 120ms ease,
+    box-shadow 120ms ease;
+}
+
+.imageOnlyCandidateCard:hover {
+  background: #ffffff;
+  border-color: #64748b;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.1);
+}
+
+/* 技追加ボタン・技候補のhoverも少し自然にする */
+.addMoveButton:hover,
+.inlineMoveCandidateBar:hover {
+  background: #f8fafc;
+  border-color: #64748b;
+}
+
+.selectedMoveBar:hover {
+  border-color: #94a3b8;
+}
+
+/* モーダル内の余白調整 */
+.compactModalSearchArea {
+  padding: 24px 28px 18px;
+  background: #f8fafc;
+}
+
+.candidateGrid {
+  background: #f8fafc;
+}
+
+/* スマホ寄り */
+@media (max-width: 640px) {
+  .layeredPokemonModalBackdrop {
+    padding: 72px 10px 24px;
+  }
+
+  .layeredPokemonSelectModal {
+    width: calc(100vw - 20px);
+    max-height: calc(100vh - 96px);
+    border-radius: 20px;
+  }
+
+  .pokemonSearchShell {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 8px 10px;
+  }
+
+  .searchCancelButton {
+    width: 100%;
+  }
+}
+
+/* サンプル・全クリアをパーティ入力エリア内でだけ上部に残す */
+.compactActionRow {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px 14px;
+  margin: 0 0 14px;
+
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+/* sticky中でも主張しすぎない操作ボタン */
+.compactActionRow .subButton {
+  min-height: 36px;
+  padding: 0 16px;
+  border-radius: 999px;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #334155;
+  font-weight: 900;
+  font-size: 14px;
+}
+
+.compactActionRow .subButton:hover {
+  background: #f1f5f9;
+  border-color: #94a3b8;
+  transform: translateY(-1px);
+}
+
+/* ポケモン情報エリア：変更できることがhoverで分かる */
+.editablePokemonArea {
+  border-radius: 18px;
+  transition:
+    background-color 120ms ease,
+    box-shadow 120ms ease,
+    transform 120ms ease;
+}
+
+.editablePokemonArea:hover {
+  background: #f8fafc;
+  box-shadow: inset 0 0 0 1px #dbe6f5;
+  transform: translateY(-1px);
+  cursor: pointer;
+}
+
+/* ポケモン名を見やすくする */
+.slotPokemonText .pokemonName {
+  color: #172033;
+  font-size: 20px;
+  font-weight: 950;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+}
+
+/* 名前とタイプの距離を少し整える */
+.slotPokemonText {
+  gap: 8px;
+}
+
+/* 変更ボタンを廃止し、削除は×だけにする */
+.moveSlotActions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.deleteSlotButton {
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 999px;
+  background: #fee2e2;
+  color: #b91c1c;
+  font-size: 22px;
+  font-weight: 950;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+
+  transition:
+    background-color 120ms ease,
+    color 120ms ease,
+    transform 120ms ease,
+    box-shadow 120ms ease;
+}
+
+.deleteSlotButton:hover {
+  background: #fecaca;
+  color: #991b1b;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(185, 28, 28, 0.18);
+}
+
+.deleteSlotButton:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* 右端の削除ボタンが詰まりすぎないように */
+.filledSlot.moveEnabledSlot {
+  position: relative;
+}
+
+.moveSlotActions {
+  padding-right: 4px;
+}
+
+/* スマホ幅ではstickyボタンを中央寄せに戻す */
+@media (max-width: 640px) {
+  .compactActionRow {
+    justify-content: center;
+    top: 0;
+    padding: 8px 10px;
+  }
+
+  .slotPokemonText .pokemonName {
+    font-size: 18px;
+  }
+
+  .deleteSlotButton {
+    width: 34px;
+    height: 34px;
+    font-size: 20px;
+  }
+}
+
+/* =========================
+   空きスロット（ポケモン追加ボタン）
+========================= */
+
+.emptySlotButton {
+  width: 100%;
+  min-height: 122px;
+  padding: 0 28px;
+  border: 2px solid #1f2937;
+  border-radius: 28px;
+  background: #ffffff;
+  display: grid;
+  grid-template-columns: 44px 120px 1fr;
+  align-items: center;
+  column-gap: 18px;
+  text-align: left;
+  transition:
+    background-color 140ms ease,
+    border-color 140ms ease,
+    transform 140ms ease,
+    box-shadow 140ms ease;
+}
+
+.emptySlotButton:hover {
+  background: #f8fafc;
+  border-color: #0f172a;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+}
+
+.emptySlotButton:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.emptySlotPlus {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 34px;
+  font-weight: 500;
+  color: #111827;
+  line-height: 1;
+}
+
+.emptySlotIndex {
+  font-size: 20px;
+  font-weight: 900;
+  color: #111827;
+  white-space: nowrap;
+  line-height: 1.2;
+}
+
+.emptySlotText {
+  font-size: 20px;
+  font-weight: 900;
+  color: #111827;
+  white-space: nowrap;
+  line-height: 1.2;
+}
+
+/* =========================
+   埋まっているスロット全体
+   左：ポケモン情報
+   中：技欄
+   右：削除
+========================= */
+
+.filledSlot.moveEnabledSlot {
+  display: grid;
+  grid-template-columns: 520px minmax(640px, 1fr) 72px;
+  align-items: stretch;
+  column-gap: 26px;
+}
+
+.slotPokemonArea {
+  height: 100%;
+  min-height: 206px;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  transition:
+    background-color 120ms ease,
+    box-shadow 120ms ease,
+    transform 120ms ease;
+}
+
+.editablePokemonArea:hover {
+  background: #f8fafc;
+  box-shadow: inset 0 0 0 1px #dbe6f5;
+  transform: translateY(-1px);
+  cursor: pointer;
+}
+
+.slotCardMain {
+  height: 100%;
+  min-height: 206px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* 技欄全体の高さが変わっても、左と右を中央に揃える */
+.moveSlotActions {
+  align-self: stretch;
+  height: 100%;
+  min-height: 206px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+/* =========================
+   削除ボタン
+========================= */
+
+.deleteSlotButton {
+  width: 54px;
+  height: 100%;
+  min-height: 84px;
+  max-height: 124px;
+  border: 0;
+  border-radius: 20px;
+  background: #f4d9db;
+  color: #dc2626;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    background-color 120ms ease,
+    color 120ms ease,
+    transform 120ms ease,
+    box-shadow 120ms ease;
+}
+
+.deleteSlotButton:hover {
+  background: #efc5c8;
+  color: #b91c1c;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(220, 38, 38, 0.14);
+}
+
+.deleteSlotButton:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* =========================
+   ポケモン名を見やすく
+========================= */
+
+.slotPokemonText .pokemonName {
+  color: #172033;
+  font-size: 22px;
+  font-weight: 950;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+}
+
+.slotPokemonText {
+  gap: 8px;
+}
+
+/* 左の画像と名前の位置を綺麗に */
+.slotPokemonInfo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.slotPokemonImage {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.slotPokemonText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+/* =========================
+   レスポンシブ
+========================= */
+
+@media (max-width: 1400px) {
+  .filledSlot.moveEnabledSlot {
+    grid-template-columns: 440px minmax(520px, 1fr) 64px;
+    column-gap: 20px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .filledSlot.moveEnabledSlot {
+    grid-template-columns: 1fr;
+    row-gap: 18px;
+  }
+
+  .slotPokemonArea,
+  .slotCardMain,
+  .moveSlotActions {
+    min-height: auto;
+  }
+
+  .moveSlotActions {
+    justify-content: flex-end;
+    padding: 0;
+  }
+
+  .deleteSlotButton {
+    width: 52px;
+    height: 72px;
+    min-height: 72px;
+    max-height: 72px;
+  }
+
+  .emptySlotButton {
+    grid-template-columns: 38px 100px 1fr;
+    min-height: 108px;
+    padding: 0 22px;
+  }
+
+  .emptySlotPlus {
+    font-size: 30px;
+  }
+
+  .emptySlotIndex,
+  .emptySlotText {
+    font-size: 18px;
+  }
+}
+
+/* =========================
+   パーティ枠のはみ出し修正
+========================= */
+
+.partySection,
+.compactPartySection,
+.partyGrid,
+.compactPartyGrid {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.compactPartyGrid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  padding: 0 18px;
+  box-sizing: border-box;
+}
+
+/* 選択済みスロット：画面幅に収まる比率に変更 */
+.filledSlot.moveEnabledSlot {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+
+  display: grid;
+  grid-template-columns: minmax(260px, 0.9fr) minmax(420px, 1.6fr) 64px;
+  column-gap: 18px;
+  align-items: stretch;
+
+  overflow: hidden;
+  padding: 22px 18px;
+}
+
+/* 技欄が横に押し出さないようにする */
+.slotCardMain,
+.moveSlotPanel,
+.inlineMoveSlotPanel,
+.moveSlotGrid,
+.inlineMoveSlotGrid {
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* 技ボタンも親幅に収める */
+.addMoveButton,
+.selectedMoveBar,
+.inlineMoveSearchBox {
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* 削除ボタンが右にはみ出さないようにする */
+.moveSlotActions {
+  min-width: 0;
+  width: 64px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.deleteSlotButton {
+  width: 46px;
+  min-width: 46px;
+  height: 96px;
+  min-height: 72px;
+  max-height: 110px;
+  border-radius: 18px;
+  flex-shrink: 0;
+}
+
+/* =========================
+   空きスロットの見た目修正
+========================= */
+
+.emptySlot {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.emptySlotButton {
+  width: 100%;
+  max-width: 100%;
+  min-height: 110px;
+  box-sizing: border-box;
+
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  align-items: center;
+  gap: 18px;
+
+  padding: 0 28px;
+  overflow: hidden;
+
+  background: #ffffff;
+  border: 2px solid #172033;
+  border-radius: 24px;
+
+  transition:
+    background-color 140ms ease,
+    border-color 140ms ease,
+    transform 140ms ease,
+    box-shadow 140ms ease;
+}
+
+.emptySlotButton:hover {
+  background: #f1f5f9;
+  border-color: #0f172a;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.1);
+}
+
+.emptySlotButton:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.emptySlotPlus {
+  font-size: 32px;
+  font-weight: 600;
+  color: #111827;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.emptySlotIndex {
+  font-size: 20px;
+  font-weight: 950;
+  color: #111827;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.emptySlotText {
+  font-size: 19px;
+  font-weight: 950;
+  color: #111827;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  justify-self: end;
+  padding-right: 4px;
+}
+
+/* 画面が狭い時は2列→1列に逃がす */
+@media (max-width: 1200px) {
+  .compactPartyGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .filledSlot.moveEnabledSlot {
+    grid-template-columns: minmax(220px, 0.8fr) minmax(360px, 1.5fr) 58px;
+    column-gap: 14px;
+  }
+
+  .deleteSlotButton {
+    width: 44px;
+    min-width: 44px;
+  }
+}
+
+@media (max-width: 860px) {
+  .compactPartyGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .filledSlot.moveEnabledSlot {
+    grid-template-columns: 1fr;
+    row-gap: 16px;
+    padding: 18px;
+  }
+
+  .moveSlotActions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .deleteSlotButton {
+    width: 64px;
+    height: 44px;
+    min-height: 44px;
+    max-height: 44px;
+    border-radius: 16px;
+  }
+
+  .emptySlotButton {
+    min-height: 92px;
+    grid-template-columns: auto auto 1fr;
+  }
+
+  .emptySlotText {
+    justify-self: start;
+  }
+}
+
+/* =========================
+   PC用：左右の余白にうっすら模様を入れる
+========================= */
+
+body {
+  background: #ffffff;
+}
+
+@media (min-width: 1100px) {
+
+  body::before,
+  body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: max(56px, calc((100vw - 1440px) / 2));
+    pointer-events: none;
+    z-index: 0;
+
+    background-image: url("/images/ui/haikei.jpg");
+    background-repeat: repeat;
+    background-size: 360px auto;
+    opacity: 0.16;
+  }
+
+  body::before {
+    left: 0;
+    background-position: left top;
+  }
+
+  body::after {
+    right: 0;
+    background-position: right top;
+  }
+
+  #root {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+@media (max-width: 1099px) {
+
+  body::before,
+  body::after {
+    display: none;
+  }
+}
+
+/* =========================
+   PC用：中央コンテンツ外側全体に背景模様
+========================= */
+
+@media (min-width: 1100px) {
+  body {
+    background-color: #ffffff;
+    background-image: url("/images/ui/haikei.png");
+    background-repeat: repeat;
+    background-size: 420px auto;
+    background-attachment: fixed;
+  }
+
+  /* 前に追加した左右だけの疑似要素を無効化 */
+  body::before,
+  body::after {
+    display: none !important;
+    content: none !important;
+  }
+
+  /* 中央のアプリ本体は白で覆う */
+  #root {
+    position: relative;
+    z-index: 1;
+  }
+
+  .app {
+    max-width: 1440px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.96);
+    min-height: 100vh;
+    box-shadow:
+      -1px 0 0 rgba(226, 232, 240, 0.9),
+      1px 0 0 rgba(226, 232, 240, 0.9);
+  }
+}
+
+@media (max-width: 1099px) {
+  body {
+    background-image: none;
+    background-color: #ffffff;
+  }
+
+  .app {
+    background: #ffffff;
+    box-shadow: none;
+  }
+}
+
+/* =========================
+   全体背景：画像を最下層に敷く
+========================= */
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background-image: url("/images/ui/haikei.jpg");
+  background-repeat: repeat;
+  background-size: 520px auto;
+  background-position: center top;
+  background-attachment: fixed;
+}
+
+/* 中央のアプリ本体 */
+.app {
+  position: relative;
+  z-index: 1;
+
+  width: min(1440px, 100%);
+  min-height: 100vh;
+  margin: 0 auto;
+
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow:
+    -1px 0 0 rgba(226, 232, 240, 0.9),
+    1px 0 0 rgba(226, 232, 240, 0.9);
+}
+
+/* 以前の左右だけ背景を無効化 */
+body::before,
+body::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* ポケモン検索画面は最上層 */
+.layeredPokemonModalBackdrop {
+  z-index: 1000;
+}
+
+/* スマホでは背景画像なし */
+@media (max-width: 1099px) {
+  body {
+    background-image: none;
+    background-color: #ffffff;
+  }
+
+  .app {
+    width: 100%;
+    background: #ffffff;
+    box-shadow: none;
+  }
+}
+
+/* =========================
+   背景画像を1枚絵として敷く
+========================= */
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+
+  background-image: url("/images/ui/haikei.jpg");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* 中央のアプリ本体 */
+.app {
+  position: relative;
+  z-index: 1;
+
+  width: min(1440px, 100%);
+  min-height: 100vh;
+  margin: 0 auto;
+
+  /*
+    中央にも背景をうっすら透かしたいなら 0.94〜0.97
+    完全に白くしたいなら #ffffff
+  */
+  background: rgba(255, 255, 255);
+
+  box-shadow:
+    -1px 0 0 rgba(226, 232, 240, 0.9),
+    1px 0 0 rgba(226, 232, 240, 0.9);
+}
+
+/* 以前の左右だけ背景を無効化 */
+body::before,
+body::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* ポケモン検索画面は最上層 */
+.layeredPokemonModalBackdrop {
+  z-index: 1000;
+}
+
+/* スマホでは背景画像なし */
+@media (max-width: 1099px) {
+  body {
+    background-image: none;
+    background-color: #ffffff;
+  }
+
+  .app {
+    width: 100%;
+    background: #ffffff;
+    box-shadow: none;
+  }
+}
+
+/* 攻撃技が未選択のときの案内 */
+.offenseNeedMoveCard {
+  margin-top: 22px;
+  padding: 34px 28px;
+  border-radius: 24px;
+  background: #f8fafc;
+  border: 1px solid #dbe6f5;
+  text-align: center;
+}
+
+.offenseNeedMoveCard h3 {
+  margin: 0 0 12px;
+  color: #172033;
+  font-size: 28px;
+  font-weight: 950;
+}
+
+.offenseNeedMoveCard p {
+  margin: 0;
+  color: #64748b;
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.8;
+}
+
+.offenseNeedMoveExample {
+  margin-top: 10px !important;
+  color: #94a3b8 !important;
+  font-size: 15px !important;
+}
