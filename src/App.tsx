@@ -1367,6 +1367,129 @@ function getMoveCandidateScore(move: MoveData, pokemon: PokemonData) {
   return score;
 }
 
+function getMoveDefenseMultiplier(params: {
+  move: MoveData;
+  defender: PokemonData;
+  defenderAbilityEnabled: boolean;
+  moldBreakerEnabled: boolean;
+}) {
+  const { move, defender, defenderAbilityEnabled, moldBreakerEnabled } = params;
+
+  let multiplier = getTypeMultiplier(move.type, defender.types);
+
+  if (defenderAbilityEnabled && defender.defensiveAbilityEffect) {
+    multiplier = applyDefensiveAbilityEffect({
+      multiplier,
+      move,
+      effect: defender.defensiveAbilityEffect,
+      moldBreakerEnabled,
+    });
+  }
+
+  return multiplier;
+}
+
+function applyDefensiveAbilityEffect(params: {
+  multiplier: number;
+  move: MoveData;
+  effect: NonNullable<PokemonData["defensiveAbilityEffect"]>;
+  moldBreakerEnabled: boolean;
+}) {
+  const { multiplier, move, effect, moldBreakerEnabled } = params;
+
+  if (moldBreakerEnabled && effect.ignoredByMoldBreaker) {
+    return multiplier;
+  }
+
+  switch (effect.kind) {
+    case "huyuu":
+      if (move.type === "じめん") {
+        return 0;
+      }
+      return multiplier;
+
+    case "unaginobori":
+      if (move.type === "でんき") {
+        return 0;
+      }
+      return multiplier;
+
+    case "atuisibou":
+      if (move.type === "ほのお" || move.type === "こおり") {
+        return multiplier * 0.5;
+      }
+      return multiplier;
+
+    case "tyosui":
+      if (move.type === "みず") {
+        return 0;
+      }
+      return multiplier;
+
+    case "hiraisinn":
+      if (move.type === "でんき") {
+        return 0;
+      }
+      return multiplier;
+
+    case "tikudenn":
+      if (move.type === "でんき") {
+        return 0;
+      }
+      return multiplier;
+
+    case "tainetu":
+      if (move.type === "ほのお") {
+        return multiplier * 0.5;
+      }
+      return multiplier;
+
+    case "soushoku":
+      if (move.type === "くさ") {
+        return 0;
+      }
+      return multiplier;
+
+    case "moraibi":
+      if (move.type === "ほのお") {
+        return 0;
+      }
+      return multiplier;
+
+    case "hideri":
+      if (move.type === "みず") {
+        return multiplier * 0.5;
+      }
+
+      if (move.type === "ほのお") {
+        return multiplier * 1.5;
+      }
+
+      return multiplier;
+
+    case "amehurasi":
+      if (move.type === "ほのお") {
+        return multiplier * 0.5;
+      }
+
+      if (move.type === "みず") {
+        return multiplier * 1.5;
+      }
+
+      return multiplier;
+
+    case "feari-o-ra":
+      if (move.type === "フェアリー") {
+        return multiplier * (4 / 3);
+      }
+
+      return multiplier;
+
+    default:
+      return multiplier;
+  }
+}
+
 function analyzeOffenseSingleTypesFromSlots(
   slots: PartySlot[]
 ): OffenseAnalysisResult[] {

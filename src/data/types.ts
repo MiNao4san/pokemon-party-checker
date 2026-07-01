@@ -37,10 +37,10 @@ export type DefensiveAbilityEffect =
     | { kind: "unaginobori"; label: "うなぎのぼり"; ignoredByMoldBreaker: true; }
     | { kind: "atuisibou"; label: "あついしぼう"; ignoredByMoldBreaker: true; }
     | { kind: "tyosui"; label: "ちょすい"; ignoredByMoldBreaker: true; }
-    | { kind: "hideri"; label: "ひでり"; ignoredByMoldBreaker: true; }
-    | { kind: "amehurasi"; label: "あめふらし"; ignoredByMoldBreaker: true; }
+    | { kind: "hideri"; label: "ひでり"; ignoredByMoldBreaker: false; }
+    | { kind: "amehurasi"; label: "あめふらし"; ignoredByMoldBreaker: false; }
     | { kind: "hiraisinn"; label: "ひらいしん"; ignoredByMoldBreaker: true; }
-    | { kind: "tikudenn"; label: "ちくでん"; ignoredByMoldBreaker: false; }
+    | { kind: "tikudenn"; label: "ちくでん"; ignoredByMoldBreaker: true; }
     | { kind: "tainetu"; label: "たいねつ"; ignoredByMoldBreaker: true; }
     | { kind: "soushoku"; label: "そうしょく"; ignoredByMoldBreaker: true; }
     | { kind: "feari-o-ra"; label: "フェアリーオーラ"; ignoredByMoldBreaker: true; }

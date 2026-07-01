@@ -124,7 +124,7 @@ export const pokemonData: PokemonData[] = [
         defensiveAbilityEffect: {
             kind: "hideri",
             label: "ひでり",
-            ignoredByMoldBreaker: true,
+            ignoredByMoldBreaker: false,
         },
         imageUrl: "/images/pokemons/mega-riza-donn-y.png",
         attackStyle: "特殊",
@@ -355,7 +355,7 @@ export const pokemonData: PokemonData[] = [
         defensiveAbilityEffect: {
             kind: "amehurasi",
             label: "あめふらし",
-            ignoredByMoldBreaker: true
+            ignoredByMoldBreaker: false
         },
         imageUrl: "/images/pokemons/perippa-.png",
         attackStyle: "特殊",
