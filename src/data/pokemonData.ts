@@ -121,11 +121,10 @@ export const pokemonData: PokemonData[] = [
             "リザ",
             "メガ",
         ],
-        ability: "ひでり",
         defensiveAbilityEffect: {
-            kind: "attackTypeMultiplier",
-            affectedAttackTypes: ["みず"],
-            multiplier: 0.5,
+            kind: "hideri",
+            label: "ひでり",
+            ignoredByMoldBreaker: true,
         },
         imageUrl: "/images/pokemons/mega-riza-donn-y.png",
         attackStyle: "特殊",
@@ -209,6 +208,7 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["サザンドラ", "サザン"],
         imageUrl: "/images/pokemons/sazanndora.png",
+        defensiveAbilityEffect: { kind: "huyuu", label: "ふゆう", ignoredByMoldBreaker: true, },
         attackStyle: "特殊",
     },
     {
@@ -237,6 +237,7 @@ export const pokemonData: PokemonData[] = [
         searchKeywords: ["メガギャラドス", "ギャラドス", "ギャラ", "メガ"],
         imageUrl: "/images/pokemons/mega-gyaradosu.png",
         attackStyle: "物理",
+        canUseMoldBreaker: true,
     },
     {
         id: "ragura-ji",
@@ -289,6 +290,11 @@ export const pokemonData: PokemonData[] = [
         types: ["ほのお", "エスパー"],
         formLabel: "メガ",
         searchKeywords: ["メガマフォクシー", "マフォクシー", "マフォ", "メガ"],
+        defensiveAbilityEffect: {
+            kind: "huyuu",
+            label: "ふゆう",
+            ignoredByMoldBreaker: true
+        },
         imageUrl: "/images/pokemons/mega-mafokusi-.png",
         attackStyle: "特殊",
     },
@@ -303,11 +309,10 @@ export const pokemonData: PokemonData[] = [
             "水ロトム",
             "ロトム",
         ],
-        ability: "ふゆう",
         defensiveAbilityEffect: {
-            kind: "attackTypeMultiplier",
-            affectedAttackTypes: ["じめん"],
-            multiplier: 0,
+            kind: "huyuu",
+            label: "ふゆう",
+            ignoredByMoldBreaker: true
         },
         imageUrl: "/images/pokemons/rotomu-whosshu.png",
         attackStyle: "特殊",
@@ -348,9 +353,9 @@ export const pokemonData: PokemonData[] = [
         subAttackTypes: ["こおり"],
         ability: "あめふらし",
         defensiveAbilityEffect: {
-            kind: "attackTypeMultiplier",
-            affectedAttackTypes: ["ほのお"],
-            multiplier: 0.5,
+            kind: "amehurasi",
+            label: "あめふらし",
+            ignoredByMoldBreaker: true
         },
         imageUrl: "/images/pokemons/perippa-.png",
         attackStyle: "特殊",
@@ -587,6 +592,11 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["ソウブレイズ", "ソウ"],
         imageUrl: "/images/pokemons",
+        defensiveAbilityEffect: {
+            kind: "moraibi",
+            label: "もらいび",
+            ignoredByMoldBreaker: true,
+        },
         attackStyle: "物理",
     },
     {
@@ -605,6 +615,12 @@ export const pokemonData: PokemonData[] = [
         formLabel: "メガ",
         searchKeywords: ["フラエッテ", "フラ", "フラエッテ:永遠"],
         imageUrl: "/images/pokemons",
+        ability: "フェアリーオーラ",
+        defensiveAbilityEffect: {
+            kind: "feari-o-ra",
+            label: "フェアリーオーラ",
+            ignoredByMoldBreaker: true
+        },
         attackStyle: "特殊",
     },
 
@@ -626,9 +642,9 @@ export const pokemonData: PokemonData[] = [
         searchKeywords: ["メガフシギバナ", "フシギバナ", "フシギ", "メガ"],
         ability: "あついしぼう",
         defensiveAbilityEffect: {
-            kind: "attackTypeMultiplier",
-            affectedAttackTypes: ["ほのお", "こおり"],
-            multiplier: 0.5,
+            kind: "atuisibou",
+            label: "あついしぼう",
+            ignoredByMoldBreaker: true
         },
         attackStyle: "特殊",
     },
@@ -711,11 +727,10 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["ヒート", "ヒートロトム", "ヒー", "ロトム"],
         imageUrl: "/images/pokemons",
-        ability: "ふゆう",
         defensiveAbilityEffect: {
-            kind: "attackTypeMultiplier",
-            affectedAttackTypes: ["じめん"],
-            multiplier: 0,
+            kind: "huyuu",
+            label: "ふゆう",
+            ignoredByMoldBreaker: true
         },
         attackStyle: "特殊",
     },
@@ -753,6 +768,12 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["マンムー", "マン"],
         imageUrl: "/images/pokemons",
+        ability: "あついしぼう",
+        defensiveAbilityEffect: {
+            kind: "atuisibou",
+            label: "あついしぼう",
+            ignoredByMoldBreaker: true
+        },
         attackStyle: "物理",
     },
     {
@@ -771,6 +792,12 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["マリルリ", "マリル", "マリ"],
         imageUrl: "/images/pokemons",
+
+        defensiveAbilityEffect: {
+            kind: "soushoku",
+            label: "そうしょく",
+            ignoredByMoldBreaker: true
+        },
         attackStyle: "物理",
     },
     {
@@ -790,6 +817,7 @@ export const pokemonData: PokemonData[] = [
         searchKeywords: ["ドリュウズ", "ドリ"],
         imageUrl: "/images/pokemons",
         attackStyle: "物理",
+        canUseMoldBreaker: true,
     },
     {
         id: "pikusi-",
@@ -906,6 +934,11 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["カビゴン", "カビ"],
         imageUrl: "/images/pokemons",
+        defensiveAbilityEffect: {
+            kind: "atuisibou",
+            label: "あついしぼう",
+            ignoredByMoldBreaker: true,
+        },
         attackStyle: "物理",
     },
     {
@@ -923,11 +956,10 @@ export const pokemonData: PokemonData[] = [
         types: ["くさ", "ドラゴン"],
         formLabel: "メガ",
         searchKeywords: ["ジュカイン", "ジュ", "メガジュカイン", "メガ"],
-        ability: "ひらいしん",
         defensiveAbilityEffect: {
-            kind: "attackTypeMultiplier",
-            affectedAttackTypes: ["でんき"],
-            multiplier: 0,
+            kind: "hiraisinn",
+            label: "ひらいしん",
+            ignoredByMoldBreaker: true,
         },
         imageUrl: "/images/pokemons",
         attackStyle: "特殊",
@@ -939,6 +971,11 @@ export const pokemonData: PokemonData[] = [
         formLabel: "通常",
         searchKeywords: ["ヤバソチャ", "ヤバ"],
         imageUrl: "/images/pokemons",
+        defensiveAbilityEffect: {
+            kind: "tainetu",
+            label: "たいねつ",
+            ignoredByMoldBreaker: true,
+        },
         attackStyle: "特殊",
     },
     {
@@ -947,11 +984,10 @@ export const pokemonData: PokemonData[] = [
         types: ["でんき"],
         formLabel: "通常",
         searchKeywords: ["シビルドン", "シビ"],
-        ability: "ふゆう",
         defensiveAbilityEffect: {
-            kind: "attackTypeMultiplier",
-            affectedAttackTypes: ["じめん"],
-            multiplier: 0,
+            kind: "huyuu",
+            label: "ふゆう",
+            ignoredByMoldBreaker: true,
         },
         imageUrl: "/images/pokemons",
         attackStyle: "両刀",
@@ -964,9 +1000,9 @@ export const pokemonData: PokemonData[] = [
         searchKeywords: ["シビルドン", "シビ", "メガシビルドン", "メガ"],
         ability: "うなぎのぼり",
         defensiveAbilityEffect: {
-            kind: "attackTypeMultiplier",
-            affectedAttackTypes: ["じめん"],
-            multiplier: 0,
+            kind: "unaginobori",
+            label: "うなぎのぼり",
+            ignoredByMoldBreaker: true,
         },
         imageUrl: "/images/pokemons",
         attackStyle: "両刀",
@@ -1010,11 +1046,10 @@ export const pokemonData: PokemonData[] = [
             "草ロトム",
             "ロトム",
         ],
-        ability: "ふゆう",
         defensiveAbilityEffect: {
-            kind: "attackTypeMultiplier",
-            affectedAttackTypes: ["じめん"],
-            multiplier: 0,
+            kind: "huyuu",
+            label: "ふゆう",
+            ignoredByMoldBreaker: true,
         },
         attackStyle: "特殊",
     },

@@ -1,11 +1,13 @@
 import type { PokemonType } from "./types";
 
 export type MoveCategory = "物理" | "特殊" | "その他";
+export type MoveMatchupRule = "通常" | "フリーズドライ" | "フライングプレス";
 export type MoveData = {
     id: string;
     name: string;
     type: PokemonType;
     category?: MoveCategory;
+    matchupRule?: MoveMatchupRule;
 };
 
 export const moveData: MoveData[] = [
@@ -160,7 +162,7 @@ export const moveData: MoveData[] = [
     { id: "reijinnguburu-honoo", name: "レイジングブル", type: "ほのお", category: "物理" },
 
     { id: "ice-beam", name: "れいとうビーム", type: "こおり", category: "特殊" },
-    { id: "huri-zudorai", name: "フリーズドライ", type: "こおり", category: "特殊" },
+    { id: "huri-zudorai", name: "フリーズドライ", type: "こおり", category: "特殊", },
     { id: "kogoerukaze", name: "こごえるかぜ", type: "こおり", category: "特殊" },
     { id: "hubuki", name: "ふぶき", type: "こおり", category: "特殊" },
     { id: "koorinoibuki", name: "こおりのいぶき", type: "こおり", category: "特殊" },
