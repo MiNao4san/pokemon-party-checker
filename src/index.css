@@ -1875,30 +1875,6 @@ body::after {
     background-position: right top;
   }
 
-  body {
-    background-color: #ffffff;
-    background-image: url("/images/ui/haikei.png");
-    background-repeat: repeat;
-    background-size: 420px auto;
-    background-attachment: fixed;
-  }
-
-  body::before,
-  body::after {
-    content: none !important;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    width: max(56px, calc((100vw - 1440px) / 2));
-    pointer-events: none;
-    z-index: 0;
-    background-image: url("/images/ui/haikei.jpg");
-    background-repeat: repeat;
-    background-size: 360px auto;
-    opacity: 0.16;
-    display: none !important;
-  }
-
   #root {
     position: relative;
     z-index: 1;
