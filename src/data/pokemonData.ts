@@ -1036,6 +1036,26 @@ export const pokemonData: PokemonData[] = [
         imageUrl: "/images/pokemons",
         attackStyle: "物理",
     },
+    {
+        id: "ruchaburu",
+        name: "ルチャブル",
+        types: ["かくとう", "ひこう"],
+        formLabel: "通常",
+        searchKeywords: ["ルチャブル", "ルチャ"],
+        threatMoveIds: ["fryingPress"],
+        imageUrl: "/images/pokemons",
+        attackStyle: "物理"
+    },
+    {
+        id: "mega-ruchaburu",
+        name: "ルチャブル",
+        types: ["かくとう", "ひこう"],
+        formLabel: "通常",
+        searchKeywords: ["ルチャブル", "ルチャ"],
+        threatMoveIds: ["fryingPress"],
+        imageUrl: "/images/pokemons",
+        attackStyle: "物理"
+    },
 
     {
         id: "rotomu-cut",
