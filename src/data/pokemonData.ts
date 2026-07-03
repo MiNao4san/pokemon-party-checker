@@ -162,6 +162,7 @@ export const pokemonData: PokemonData[] = [
         types: ["こおり", "フェアリー"],
         formLabel: "通常",
         searchKeywords: ["アローラキュウコン", "アローラ", "キュウコン"],
+        threatMoveIds: ["freeze-dry"],
         imageUrl: "/images/pokemons/aro-rakyuukonn.png",
         attackStyle: "特殊",
     },

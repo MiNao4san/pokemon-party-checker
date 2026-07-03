@@ -1869,6 +1869,13 @@ function getDefenseThreatPokemonName(pokemon: PokemonData) {
     labels.push("きもったま");
   }
 
+  const specialThreatMoveNames = (pokemon.threatMoveIds ?? [])
+    .map((moveId) => moveData.find((move) => move.id === moveId))
+    .filter((move): move is MoveData => move !== undefined)
+    .map((move) => move.name);
+
+  labels.push(...specialThreatMoveNames);
+
   if (labels.length === 0) {
     return pokemon.name;
   }
@@ -1877,7 +1884,7 @@ function getDefenseThreatPokemonName(pokemon: PokemonData) {
 }
 
 function getFallbackAttackOptions(pokemon: PokemonData) {
-  return pokemon.types.map((type) => ({
+  const typeFallbackOptions = pokemon.types.map((type) => ({
     move: {
       id: `fallback-${pokemon.id}-${type}`,
       name: `${type}技`,
@@ -1888,6 +1895,18 @@ function getFallbackAttackOptions(pokemon: PokemonData) {
     moveName: `${type}技`,
     isFallback: true,
   }));
+
+  const threatMoveOptions = (pokemon.threatMoveIds ?? [])
+    .map((moveId) => moveData.find((move) => move.id === moveId))
+    .filter((move): move is MoveData => move !== undefined)
+    .map((move) => ({
+      move,
+      type: move.type,
+      moveName: move.name,
+      isFallback: false,
+    }));
+
+  return [...typeFallbackOptions, ...threatMoveOptions];
 }
 
 function countDefenseDetails(details: AnalysisDetailWithMove[]) {

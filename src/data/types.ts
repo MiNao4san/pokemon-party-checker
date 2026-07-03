@@ -59,6 +59,8 @@ export type PokemonData = {
     canUseMoldBreaker?: boolean;
     canUseScrappy?: boolean;
 
+    threatMoveIds?: string[];
+
     subAttackTypes?: PokemonType[];
 
     imageUrl?: string;
