@@ -2019,3 +2019,14 @@ body::after {
   background: #e0e7ff;
   border-color: #6366f1;
 }
+
+.scrappyToggle.active {
+  background: #fff7ed;
+  border-color: #fb923c;
+  color: #c2410c;
+}
+
+.scrappyToggle.active:hover {
+  background: #ffedd5;
+  border-color: #f97316;
+}

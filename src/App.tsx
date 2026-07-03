@@ -25,6 +25,7 @@ type PartySlot = {
   moves: MoveData[];
   defensiveAbilityEnabled: boolean;
   moldBreakerEnabled: boolean;
+  scrappyEnabled: boolean;
 };
 
 function createEmptySlot(): PartySlot {
@@ -33,6 +34,7 @@ function createEmptySlot(): PartySlot {
     moves: [],
     defensiveAbilityEnabled: true,
     moldBreakerEnabled: false,
+    scrappyEnabled: false,
   };
 }
 
@@ -219,6 +221,7 @@ function App() {
         moves: [],
         defensiveAbilityEnabled: true,
         moldBreakerEnabled: false,
+        scrappyEnabled: false,
       };
 
       return next;
@@ -255,6 +258,20 @@ function App() {
       })
     );
   }
+  function toggleScrappy(slotIndex: number) {
+    setPartySlots((current) =>
+      current.map((slot, index) => {
+        if (index !== slotIndex) {
+          return slot;
+        }
+
+        return {
+          ...slot,
+          scrappyEnabled: !slot.scrappyEnabled,
+        };
+      })
+    );
+  }
 
   function toggleMoldBreaker(slotIndex: number) {
     setPartySlots((current) =>
@@ -278,6 +295,7 @@ function App() {
         moves: [],
         defensiveAbilityEnabled: true,
         moldBreakerEnabled: false,
+        scrappyEnabled: false,
       }))
       .slice(0, SLOT_COUNT);
 
@@ -412,6 +430,7 @@ function App() {
               onClear={() => clearSlot(index)}
               onToggleDefensiveAbility={() => toggleDefensiveAbility(index)}
               onToggleMoldBreaker={() => toggleMoldBreaker(index)}
+              onToggleScrappy={() => toggleScrappy(index)}
               onStartMoveEdit={(moveSlotIndex) => startMoveEdit(index, moveSlotIndex)}
               onCancelMoveEdit={cancelMoveEdit}
               onMoveQueryChange={updateMoveQuery}
@@ -492,6 +511,7 @@ function PartySlotCard(props: {
   onClear: () => void;
   onToggleDefensiveAbility: () => void;
   onToggleMoldBreaker: () => void;
+  onToggleScrappy: () => void;
   onStartMoveEdit: (moveSlotIndex: number) => void;
   onCancelMoveEdit: () => void;
   onMoveQueryChange: (value: string) => void;
@@ -590,6 +610,23 @@ function PartySlotCard(props: {
             >
               かたやぶり
               {props.slot.moldBreakerEnabled ? " ON" : " OFF"}
+            </button>
+          )}
+          {pokemon.canUseScrappy && (
+            <button
+              type="button"
+              className={
+                props.slot.scrappyEnabled
+                  ? "abilityToggle scrappyToggle active"
+                  : "abilityToggle scrappyToggle"
+              }
+              onClick={(event) => {
+                event.stopPropagation();
+                props.onToggleScrappy();
+              }}
+            >
+              きもったま
+              {props.slot.scrappyEnabled ? " ON" : " OFF"}
             </button>
           )}
         </span>
@@ -1440,16 +1477,95 @@ function getMoveCandidateScore(move: MoveData, pokemon: PokemonData) {
 
   return score;
 }
+function getSpecialMoveMultiplier(params: {
+  move: MoveData;
+  defender: PokemonData;
+  scrappyEnabled: boolean;
+}) {
+  const { move, defender, scrappyEnabled } = params;
+
+  if (move.specialRule === "freezeDry") {
+    return getFreezeDryMultiplier(defender.types);
+  }
+
+  if (move.specialRule === "flyingPress") {
+    return getFlyingPressMultiplier(defender.types, scrappyEnabled);
+  }
+
+  return getScrappyAwareTypeMultiplier({
+    attackType: move.type,
+    defenseTypes: defender.types,
+    scrappyEnabled,
+  });
+}
+function getScrappyAwareTypeMultiplier(params: {
+  attackType: PokemonType;
+  defenseTypes: PokemonType[];
+  scrappyEnabled: boolean;
+}) {
+  const { attackType, defenseTypes, scrappyEnabled } = params;
+
+  if (
+    scrappyEnabled &&
+    (attackType === "ノーマル" || attackType === "かくとう")
+  ) {
+    return defenseTypes.reduce((current, defenseType) => {
+      const normalMultiplier = getTypeMultiplier(attackType, [defenseType]);
+
+      if (defenseType === "ゴースト" && normalMultiplier === 0) {
+        return current * 1;
+      }
+
+      return current * normalMultiplier;
+    }, 1);
+  }
+
+  return getTypeMultiplier(attackType, defenseTypes);
+}
+function getFreezeDryMultiplier(defenseTypes: PokemonType[]) {
+  return defenseTypes.reduce((current, defenseType) => {
+    if (defenseType === "みず") {
+      return current * 2;
+    }
+
+    return current * getTypeMultiplier("こおり", [defenseType]);
+  }, 1);
+}
+function getFlyingPressMultiplier(
+  defenseTypes: PokemonType[],
+  scrappyEnabled: boolean
+) {
+  const fightingMultiplier = getScrappyAwareTypeMultiplier({
+    attackType: "かくとう",
+    defenseTypes,
+    scrappyEnabled,
+  });
+
+  const flyingMultiplier = getTypeMultiplier("ひこう", defenseTypes);
+
+  return fightingMultiplier * flyingMultiplier;
+}
 
 function getMoveDefenseMultiplier(params: {
   move: MoveData;
   defender: PokemonData;
   defenderAbilityEnabled: boolean;
   moldBreakerEnabled: boolean;
+  scrappyEnabled: boolean;
 }) {
-  const { move, defender, defenderAbilityEnabled, moldBreakerEnabled } = params;
+  const {
+    move,
+    defender,
+    defenderAbilityEnabled,
+    moldBreakerEnabled,
+    scrappyEnabled,
+  } = params;
 
-  let multiplier = getTypeMultiplier(move.type, defender.types);
+  let multiplier = getSpecialMoveMultiplier({
+    move,
+    defender,
+    scrappyEnabled,
+  });
 
   if (defenderAbilityEnabled && defender.defensiveAbilityEffect) {
     multiplier = applyDefensiveAbilityEffect({
@@ -1622,6 +1738,7 @@ function analyzeDefenseThreatPokemon(
           defender: targetSlot.pokemon,
           defenderAbilityEnabled: targetSlot.defensiveAbilityEnabled,
           moldBreakerEnabled: opponent.canUseMoldBreaker === true,
+          scrappyEnabled: opponent.canUseScrappy === true,
         });
 
         return {
@@ -1714,6 +1831,7 @@ function getBestOffenseDetailForSlot(
       defender,
       defenderAbilityEnabled: true,
       moldBreakerEnabled: slot.moldBreakerEnabled,
+      scrappyEnabled: slot.scrappyEnabled,
     });
 
     return {
@@ -1741,11 +1859,21 @@ function getSlotAttackOptions(slot: PartySlot & { pokemon: PokemonData }) {
   }));
 }
 function getDefenseThreatPokemonName(pokemon: PokemonData) {
+  const labels: string[] = [];
+
   if (pokemon.canUseMoldBreaker) {
-    return `${pokemon.name}（かたやぶり）`;
+    labels.push("かたやぶり");
   }
 
-  return pokemon.name;
+  if (pokemon.canUseScrappy) {
+    labels.push("きもったま");
+  }
+
+  if (labels.length === 0) {
+    return pokemon.name;
+  }
+
+  return `${pokemon.name}（${labels.join("・")}）`;
 }
 
 function getFallbackAttackOptions(pokemon: PokemonData) {

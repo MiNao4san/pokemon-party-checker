@@ -539,6 +539,7 @@ export const pokemonData: PokemonData[] = [
         searchKeywords: ["ミミロップ", "ミミ", "メガミミロップ", "メガ"],
         imageUrl: "/images/pokemons",
         attackStyle: "物理",
+        canUseScrappy: true,
     },
     {
         id: "meganiumu",

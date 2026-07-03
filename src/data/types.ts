@@ -57,6 +57,7 @@ export type PokemonData = {
     ability?: string;
     defensiveAbilityEffect?: DefensiveAbilityEffect;
     canUseMoldBreaker?: boolean;
+    canUseScrappy?: boolean;
 
     subAttackTypes?: PokemonType[];
 
