@@ -32,23 +32,12 @@ export function getTypeMultiplier(
  * もふもふ：ほのおを2倍
  */
 export function applyDefensiveAbilityEffect(
-    attackType: PokemonType,
+    _attackType: PokemonType,
     baseMultiplier: number,
-    defensiveAbilityEffect?: DefensiveAbilityEffect
+    _defensiveAbilityEffect?: DefensiveAbilityEffect
 ): number {
-    if (!defensiveAbilityEffect) {
-        return baseMultiplier;
-    }
-
-    if (defensiveAbilityEffect.kind === "attackTypeMultiplier") {
-        if (defensiveAbilityEffect.affectedAttackTypes.includes(attackType)) {
-            return baseMultiplier * defensiveAbilityEffect.multiplier;
-        }
-    }
-
     return baseMultiplier;
 }
-
 /**
  * タイプ相性と特性補正を合わせた最終倍率を返す。
  */
