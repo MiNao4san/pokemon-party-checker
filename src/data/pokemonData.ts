@@ -1048,10 +1048,10 @@ export const pokemonData: PokemonData[] = [
     },
     {
         id: "mega-ruchaburu",
-        name: "ルチャブル",
+        name: "メガルチャブル",
         types: ["かくとう", "ひこう"],
-        formLabel: "通常",
-        searchKeywords: ["ルチャブル", "ルチャ"],
+        formLabel: "メガ",
+        searchKeywords: ["ルチャブル", "ルチャ", "メガルチャブル", "メガ"],
         threatMoveIds: ["fryingPress"],
         imageUrl: "/images/pokemons",
         attackStyle: "物理"
