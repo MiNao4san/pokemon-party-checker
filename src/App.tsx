@@ -1146,7 +1146,7 @@ function DefenseThreatPokemonList(props: { results: DefensePokemonThreat[] }) {
                 )}
 
                 <span className="riskPokemonInfo">
-                  <strong>{result.pokemon.name}</strong>
+                  <strong>{getDefenseThreatPokemonName(result.pokemon)}</strong>
                   <span className="typeRow">
                     {result.pokemon.types.map((type) => (
                       <TypeBadge key={type} type={type} />
@@ -1739,6 +1739,13 @@ function getSlotAttackOptions(slot: PartySlot & { pokemon: PokemonData }) {
     moveName: move.name,
     isFallback: false,
   }));
+}
+function getDefenseThreatPokemonName(pokemon: PokemonData) {
+  if (pokemon.canUseMoldBreaker) {
+    return `${pokemon.name}（かたやぶり）`;
+  }
+
+  return pokemon.name;
 }
 
 function getFallbackAttackOptions(pokemon: PokemonData) {
