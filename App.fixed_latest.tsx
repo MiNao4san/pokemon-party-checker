@@ -1,4 +1,4 @@
-import { useMemo, useState, type CSSProperties } from "react";
+/*import { useMemo, useState, type CSSProperties } from "react";
 import { pokemonData } from "./data/pokemonData";
 import { moveData } from "./data/moveData";
 import type { MoveData } from "./data/moveData";
@@ -415,7 +415,7 @@ function App() {
               onStartMoveEdit={(moveSlotIndex) => startMoveEdit(index, moveSlotIndex)}
               onCancelMoveEdit={cancelMoveEdit}
               onMoveQueryChange={updateMoveQuery}
-              onSelectMove={(move) => addMoveToSlot(move)}
+              onSelectMove={(move) => addMoveToSlot(index, move)}
               onRemoveMove={(moveId) => removeMoveFromSlot(index, moveId)}
             />
           ))}
@@ -1597,8 +1597,8 @@ function analyzeOffenseSingleTypesFromSlots(
       a.superEffectiveCount - b.superEffectiveCount ||
       a.neutralOrBetterCount - b.neutralOrBetterCount ||
       b.notVeryEffectiveCount +
-      b.noEffectCount -
-      (a.notVeryEffectiveCount + a.noEffectCount)
+        b.noEffectCount -
+        (a.notVeryEffectiveCount + a.noEffectCount)
     );
   });
 }
@@ -1651,8 +1651,8 @@ function analyzeDefenseThreatPokemon(
     return (
       b.superEffectiveCount - a.superEffectiveCount ||
       a.notVeryEffectiveCount +
-      a.noEffectCount -
-      (b.notVeryEffectiveCount + b.noEffectCount) ||
+        a.noEffectCount -
+        (b.notVeryEffectiveCount + b.noEffectCount) ||
       b.neutralCount - a.neutralCount
     );
   });
@@ -1825,4 +1825,4 @@ function getOffenseRiskLabel(result: OffensePokemonProblem) {
   };
 }
 
-export default App;
+export default App;*/
