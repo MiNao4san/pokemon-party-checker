@@ -1718,6 +1718,13 @@ function analyzeOffenseSingleTypesFromSlots(
     );
   });
 }
+function getMaxDetailMultiplier(details: AnalysisDetailWithMove[]) {
+  return Math.max(...details.map((detail) => detail.multiplier));
+}
+
+function getFourTimesOrMoreCount(details: AnalysisDetailWithMove[]) {
+  return details.filter((detail) => detail.multiplier >= 4).length;
+}
 
 function analyzeDefenseThreatPokemon(
   slots: PartySlot[],
@@ -1765,7 +1772,15 @@ function analyzeDefenseThreatPokemon(
   });
 
   return results.sort((a, b) => {
+    const aFourTimesOrMoreCount = getFourTimesOrMoreCount(a.details);
+    const bFourTimesOrMoreCount = getFourTimesOrMoreCount(b.details);
+
+    const aMaxMultiplier = getMaxDetailMultiplier(a.details);
+    const bMaxMultiplier = getMaxDetailMultiplier(b.details);
+
     return (
+      bFourTimesOrMoreCount - aFourTimesOrMoreCount ||
+      bMaxMultiplier - aMaxMultiplier ||
       b.superEffectiveCount - a.superEffectiveCount ||
       a.notVeryEffectiveCount +
       a.noEffectCount -
