@@ -60,6 +60,7 @@ export type PokemonData = {
     canUseScrappy?: boolean;
 
     threatMoveIds?: string[];
+    matchupIgnored?: boolean;
 
     subAttackTypes?: PokemonType[];
 

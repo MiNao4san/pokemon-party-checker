@@ -901,6 +901,7 @@ export const pokemonData: PokemonData[] = [
         searchKeywords: ["メタモン", "メタ", "モン"],
         imageUrl: "/images/pokemons",
         attackStyle: "不明",
+        matchupIgnored: true,
     },
     {
         id: "ea-mudo",

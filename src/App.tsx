@@ -134,7 +134,10 @@ function App() {
 
   const party = partySlots
     .map((slot) => slot.pokemon)
-    .filter((pokemon): pokemon is PokemonData => pokemon !== null);
+    .filter(
+      (pokemon): pokemon is PokemonData =>
+        pokemon !== null && pokemon.matchupIgnored !== true
+    );
 
   const duplicateNames = useMemo(() => {
     const counts = new Map<string, number>();
@@ -162,7 +165,12 @@ function App() {
 
   const opponentPool = useMemo(() => {
     const partyIds = new Set(party.map((pokemon) => pokemon.id));
-    return pokemonData.filter((pokemon) => !partyIds.has(pokemon.id));
+
+    return pokemonData.filter(
+      (pokemon) =>
+        !partyIds.has(pokemon.id) &&
+        pokemon.matchupIgnored !== true
+    );
   }, [party]);
 
   const defenseThreats = useMemo(
@@ -1685,7 +1693,7 @@ function analyzeOffenseSingleTypesFromSlots(
 ): OffenseAnalysisResult[] {
   const activeSlots = slots.filter(
     (slot): slot is PartySlot & { pokemon: PokemonData } =>
-      slot.pokemon !== null
+      slot.pokemon !== null && slot.pokemon.matchupIgnored !== true
   );
 
   const results = POKEMON_TYPES.map((defenseType) => {
